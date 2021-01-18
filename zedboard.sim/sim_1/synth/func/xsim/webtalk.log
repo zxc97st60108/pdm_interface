@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Webtalk v2018.3.1 (64-bit)
+# SW Build 2489853 on Tue Mar 26 04:20:25 MDT 2019
+# IP Build 2486929 on Tue Mar 26 06:44:21 MDT 2019
+# Start of session at: Mon Jan 18 11:09:49 2021
+# Process ID: 20048
+# Current directory: D:/Vivado/pdm_system/zedboard.sim/sim_1/synth/func/xsim
+# Command line: wbtcv.exe -mode batch -source D:/Vivado/pdm_system/zedboard.sim/sim_1/synth/func/xsim/xsim.dir/design_1_wrapper_func_synth/webtalk/xsim_webtalk.tcl -notrace
+# Log file: D:/Vivado/pdm_system/zedboard.sim/sim_1/synth/func/xsim/webtalk.log
+# Journal file: D:/Vivado/pdm_system/zedboard.sim/sim_1/synth/func/xsim\webtalk.jou
+#-----------------------------------------------------------
+source D:/Vivado/pdm_system/zedboard.sim/sim_1/synth/func/xsim/xsim.dir/design_1_wrapper_func_synth/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Mon Jan 18 11:09:49 2021...

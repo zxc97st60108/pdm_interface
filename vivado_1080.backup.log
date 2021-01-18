@@ -1,0 +1,1827 @@
+#-----------------------------------------------------------
+# Vivado v2018.3.1 (64-bit)
+# SW Build 2489853 on Tue Mar 26 04:20:25 MDT 2019
+# IP Build 2486929 on Tue Mar 26 06:44:21 MDT 2019
+# Start of session at: Mon Jan 18 02:36:12 2021
+# Process ID: 1080
+# Current directory: D:/Vivado/pdm_system
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent20620 D:\Vivado\pdm_system\zedboard.xpr
+# Log file: D:/Vivado/pdm_system/vivado.log
+# Journal file: D:/Vivado/pdm_system\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/Vivado/pdm_system/zedboard.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/Vivado/catch_pdm_zedboard_new'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.3/data/ip'.
+open_project: Time (s): cpu = 00:00:10 ; elapsed = 00:00:06 . Memory (MB): peak = 784.434 ; gain = 157.664
+update_compile_order -fileset sources_1
+set_property board_part em.avnet.com:zed:part0:1.4 [current_project]
+reset_property board_connections [get_projects zedboard]
+open_bd_design {D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/design_1.bd}
+Adding cell -- xilinx.com:ip:processing_system7:5.5 - processing_system7_0
+Adding cell -- xilinx.com:ip:axi_ahblite_bridge:3.0 - axi_ahblite_bridge_0
+Adding cell -- xilinx.com:ip:axi_interconnect:2.1 - axi_interconnect_0
+Adding cell -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
+Adding cell -- xilinx.com:ip:proc_sys_reset:5.0 - rst_ps7_0_100M
+Adding cell -- xilinx.com:ip:xlconstant:1.1 - xlconstant_0
+Adding cell -- xilinx.com:user:MYIP_TOP:1.0 - MYIP_TOP_0
+WARNING: [BD 41-1731] Type mismatch between connected pins: /processing_system7_0/FCLK_CLK0(clk) and /MYIP_TOP_0/g_hclk_es1(undef)
+WARNING: [BD 41-1731] Type mismatch between connected pins: /rst_ps7_0_100M/peripheral_aresetn(rst) and /MYIP_TOP_0/hreset_n(undef)
+Successfully read diagram <design_1> from BD file <D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/design_1.bd>
+open_bd_design: Time (s): cpu = 00:00:09 ; elapsed = 00:00:06 . Memory (MB): peak = 999.344 ; gain = 77.238
+report_ip_status -name ip_status 
+upgrade_ip [get_ips  {design_1_rst_ps7_0_100M_0 design_1_processing_system7_0_0}] -log ip_upgrade.log
+Upgrading 'D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/design_1.bd'
+INFO: [PS7-6] Configuring Board Preset part0. Please wait ......
+CRITICAL WARNING: [PSU-1]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_2 has negative value -0.009 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-2]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_3 has negative value -0.061 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-1]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_2 has negative value -0.009 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-2]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_3 has negative value -0.061 . PS DDR interfaces might fail when entering negative DQS skew values. 
+INFO: [IP_Flow 19-3420] Updated design_1_processing_system7_0_0 to use current project options
+WARNING: [BD 41-1731] Type mismatch between connected pins: /MYIP_TOP_0/g_hclk_es1(undef) and /processing_system7_0_upgraded_ipi/FCLK_CLK0(clk)
+INFO: [Ipptcl 7-1463] No Compatible Board Interface found. Board Tab not created in customize GUI
+INFO: [IP_Flow 19-3420] Updated design_1_rst_ps7_0_100M_0 to use current project options
+WARNING: [BD 41-1731] Type mismatch between connected pins: /MYIP_TOP_0/hreset_n(undef) and /rst_ps7_0_100M_upgraded_ipi/peripheral_aresetn(rst)
+Wrote  : <D:\Vivado\pdm_system\zedboard.srcs\sources_1\bd\design_1\design_1.bd> 
+Wrote  : <D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+INFO: [Coretcl 2-1525] Wrote upgrade log to 'D:/Vivado/pdm_system/ip_upgrade.log'.
+upgrade_ip: Time (s): cpu = 00:00:12 ; elapsed = 00:00:10 . Memory (MB): peak = 1046.527 ; gain = 42.910
+export_ip_user_files -of_objects [get_ips {design_1_rst_ps7_0_100M_0 design_1_processing_system7_0_0}] -no_script -sync -force -quiet
+generate_target all [get_files  D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/design_1.bd]
+WARNING: [BD 41-1271] The connection to the pin: /axi_ahblite_bridge_0/m_ahb_hsize has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /axi_ahblite_bridge_0/m_ahb_haddr has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /axi_ahblite_bridge_0/m_ahb_htrans has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /axi_ahblite_bridge_0/m_ahb_hburst has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /axi_ahblite_bridge_0/m_ahb_hprot has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /MYIP_TOP_0/hrdata_es1 has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /MYIP_TOP_0/hresp_es1 has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /axi_ahblite_bridge_0/m_ahb_hwdata has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /axi_ahblite_bridge_0/m_ahb_hwrite has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+Wrote  : <D:\Vivado\pdm_system\zedboard.srcs\sources_1\bd\design_1\design_1.bd> 
+VHDL Output written to : D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/synth/design_1.v
+VHDL Output written to : D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/sim/design_1.v
+VHDL Output written to : D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_ps7_0_100M .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_ahblite_bridge_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconstant_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block MYIP_TOP_0 .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'd:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_0/s00_couplers/auto_pc .
+Exporting to file D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/hw_handoff/design_1.hwh
+Generated Block Design Tcl file D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/hw_handoff/design_1_bd.tcl
+Generated Hardware Definition File D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/synth/design_1.hwdef
+generate_target: Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1186.438 ; gain = 114.355
+export_ip_user_files -of_objects [get_files D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/design_1.bd] -no_script -sync -force -quiet
+export_simulation -of_objects [get_files D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/design_1.bd] -directory D:/Vivado/pdm_system/zedboard.ip_user_files/sim_scripts -ip_user_files_dir D:/Vivado/pdm_system/zedboard.ip_user_files -ipstatic_source_dir D:/Vivado/pdm_system/zedboard.ip_user_files/ipstatic -lib_map_path [list {modelsim=D:/Vivado/pdm_system/zedboard.cache/compile_simlib/modelsim} {questa=D:/Vivado/pdm_system/zedboard.cache/compile_simlib/questa} {riviera=D:/Vivado/pdm_system/zedboard.cache/compile_simlib/riviera} {activehdl=D:/Vivado/pdm_system/zedboard.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+report_ip_status -name ip_status 
+regenerate_bd_layout
+regenerate_bd_layout
+save_bd_design
+Wrote  : <D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+[Mon Jan 18 02:39:24 2021] Launched synth_1...
+Run output will be captured here: D:/Vivado/pdm_system/zedboard.runs/synth_1/runme.log
+[Mon Jan 18 02:39:24 2021] Launched impl_1...
+Run output will be captured here: D:/Vivado/pdm_system/zedboard.runs/impl_1/runme.log
+open_run impl_1
+INFO: [Netlist 29-17] Analyzing 172 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2018.3.1
+INFO: [Device 21-403] Loading part xc7z020clg484-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.441 . Memory (MB): peak = 2122.547 ; gain = 0.000
+Restored from archive | CPU: 1.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.441 . Memory (MB): peak = 2122.547 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 2122.547 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+open_run: Time (s): cpu = 00:00:23 ; elapsed = 00:00:19 . Memory (MB): peak = 2385.203 ; gain = 723.898
+WARNING: [Timing 38-436] There are set_bus_skew constraint(s) in this design. Please run report_bus_skew to ensure that bus skew requirements are met.
+close_design
+update_ip_catalog -rebuild -scan_changes
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/Vivado/catch_pdm_zedboard_new'.
+report_ip_status -name ip_status
+upgrade_ip -vlnv xilinx.com:user:MYIP_TOP:1.0 [get_ips  design_1_MYIP_TOP_0_0] -log ip_upgrade.log
+Upgrading 'D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/design_1.bd'
+INFO: [IP_Flow 19-3422] Upgraded design_1_MYIP_TOP_0_0 (MYIP_TOP_v1_0 1.0) from revision 30 to revision 31
+WARNING: [BD 41-1731] Type mismatch between connected pins: /processing_system7_0/FCLK_CLK0(clk) and /MYIP_TOP_0_upgraded_ipi/g_hclk_es1(undef)
+WARNING: [BD 41-1731] Type mismatch between connected pins: /rst_ps7_0_100M/peripheral_aresetn(rst) and /MYIP_TOP_0_upgraded_ipi/hreset_n(undef)
+Wrote  : <D:\Vivado\pdm_system\zedboard.srcs\sources_1\bd\design_1\design_1.bd> 
+Wrote  : <D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+INFO: [Coretcl 2-1525] Wrote upgrade log to 'D:/Vivado/pdm_system/ip_upgrade.log'.
+export_ip_user_files -of_objects [get_ips design_1_MYIP_TOP_0_0] -no_script -sync -force -quiet
+report_ip_status -name ip_status 
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+WARNING: [BD 41-1271] The connection to the pin: /axi_ahblite_bridge_0/m_ahb_hsize has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /axi_ahblite_bridge_0/m_ahb_haddr has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /axi_ahblite_bridge_0/m_ahb_htrans has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /axi_ahblite_bridge_0/m_ahb_hburst has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /axi_ahblite_bridge_0/m_ahb_hprot has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /MYIP_TOP_0/hrdata_es1 has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /MYIP_TOP_0/hresp_es1 has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /axi_ahblite_bridge_0/m_ahb_hwdata has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /axi_ahblite_bridge_0/m_ahb_hwrite has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+Wrote  : <D:\Vivado\pdm_system\zedboard.srcs\sources_1\bd\design_1\design_1.bd> 
+VHDL Output written to : D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/synth/design_1.v
+VHDL Output written to : D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/sim/design_1.v
+VHDL Output written to : D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_ps7_0_100M .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_ahblite_bridge_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconstant_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block MYIP_TOP_0 .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'd:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_0/s00_couplers/auto_pc .
+Exporting to file D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/hw_handoff/design_1.hwh
+Generated Block Design Tcl file D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/hw_handoff/design_1_bd.tcl
+Generated Hardware Definition File D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/synth/design_1.hwdef
+[Mon Jan 18 05:01:51 2021] Launched synth_1...
+Run output will be captured here: D:/Vivado/pdm_system/zedboard.runs/synth_1/runme.log
+[Mon Jan 18 05:01:51 2021] Launched impl_1...
+Run output will be captured here: D:/Vivado/pdm_system/zedboard.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:03 ; elapsed = 00:00:07 . Memory (MB): peak = 3055.902 ; gain = 0.000
+report_ip_status -name ip_status 
+open_run impl_1
+INFO: [Netlist 29-17] Analyzing 172 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2018.3.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.448 . Memory (MB): peak = 3055.902 ; gain = 0.000
+Restored from archive | CPU: 0.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.448 . Memory (MB): peak = 3055.902 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 3055.902 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+WARNING: [Timing 38-436] There are set_bus_skew constraint(s) in this design. Please run report_bus_skew to ensure that bus skew requirements are met.
+report_utilization -name utilization_1
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2018.3.1
+  **** Build date : Mar 26 2019-05:02:51
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210248470371
+open_hw_target: Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 3450.816 ; gain = 228.832
+set_property PROGRAM.FILE {D:/Vivado/pdm_system/zedboard.runs/impl_1/design_1_wrapper.bit} [get_hw_devices xc7z020_1]
+current_hw_device [get_hw_devices xc7z020_1]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7z020_1] 0]
+INFO: [Labtools 27-1434] Device xc7z020 (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
+set_property PROBES.FILE {} [get_hw_devices xc7z020_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z020_1]
+set_property PROGRAM.FILE {D:/Vivado/pdm_system/zedboard.runs/impl_1/design_1_wrapper.bit} [get_hw_devices xc7z020_1]
+program_hw_devices [get_hw_devices xc7z020_1]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7z020_1] 0]
+INFO: [Labtools 27-1434] Device xc7z020 (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Vivado/pdm_system/zedboard.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'C:/Xilinx/Vivado/2018.3/data/xsim/xsim.ini' copied to run dir:'D:/Vivado/pdm_system/zedboard.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'design_1_wrapper' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Vivado/pdm_system/zedboard.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L axi_vip_v1_1_4 -L processing_system7_vip_v1_0_6 -L xilinx_vip -prj design_1_wrapper_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Vivado/pdm_system/zedboard.ip_user_files/bd/design_1/ip/design_1_processing_system7_0_0/sim/design_1_processing_system7_0_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module design_1_processing_system7_0_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Vivado/pdm_system/zedboard.ip_user_files/bd/design_1/ip/design_1_xlconstant_0_0/sim/design_1_xlconstant_0_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module design_1_xlconstant_0_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Vivado/pdm_system/zedboard.ip_user_files/bd/design_1/ip/ip/fifo_generator_0/sim/fifo_generator_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fifo_generator_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Vivado/pdm_system/zedboard.ip_user_files/bd/design_1/ipshared/212a/src/pdm.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pdm_m
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Vivado/pdm_system/zedboard.ip_user_files/bd/design_1/ipshared/212a/src/read_ctrl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module read_ctrl
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Vivado/pdm_system/zedboard.ip_user_files/bd/design_1/ipshared/212a/src/write_ctrl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module write_ctrl
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Vivado/pdm_system/zedboard.ip_user_files/bd/design_1/ipshared/212a/src/MYIP_TOP.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MYIP_TOP
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Vivado/pdm_system/zedboard.ip_user_files/bd/design_1/ip/design_1_MYIP_TOP_0_0/sim/design_1_MYIP_TOP_0_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module design_1_MYIP_TOP_0_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Vivado/pdm_system/zedboard.ip_user_files/bd/design_1/sim/design_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module design_1
+INFO: [VRFC 10-311] analyzing module design_1_axi_interconnect_0_0
+INFO: [VRFC 10-311] analyzing module s00_couplers_imp_O7FAN0
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Vivado/pdm_system/zedboard.ip_user_files/bd/design_1/ip/design_1_auto_pc_0/sim/design_1_auto_pc_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module design_1_auto_pc_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Vivado/pdm_system/zedboard.srcs/sources_1/imports/hdl/design_1_wrapper.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module design_1_wrapper
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Vivado/pdm_system/zedboard.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+"xvhdl --incr --relax -prj design_1_wrapper_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/Vivado/pdm_system/zedboard.ip_user_files/bd/design_1/ip/design_1_rst_ps7_0_100M_0/sim/design_1_rst_ps7_0_100M_0.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'design_1_rst_ps7_0_100M_0'
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/Vivado/pdm_system/zedboard.ip_user_files/bd/design_1/ip/design_1_axi_ahblite_bridge_0_0/sim/design_1_axi_ahblite_bridge_0_0.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'design_1_axi_ahblite_bridge_0_0'
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Vivado/pdm_system/zedboard.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto 9cac544fe869499295db80418a572738 --incr --debug typical --relax --mt 2 -L axi_infrastructure_v1_1_0 -L axi_vip_v1_1_4 -L processing_system7_vip_v1_0_6 -L xil_defaultlib -L lib_cdc_v1_0_2 -L proc_sys_reset_v5_0_13 -L axi_ahblite_bridge_v3_0_15 -L xlconstant_v1_1_5 -L fifo_generator_v13_2_3 -L generic_baseblocks_v2_1_0 -L axi_data_fifo_v2_1_17 -L axi_register_slice_v2_1_18 -L axi_protocol_converter_v2_1_18 -L xilinx_vip -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot design_1_wrapper_behav xil_defaultlib.design_1_wrapper xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-3091] actual bit length 128 differs from formal bit length 64 for port 'WR_DATA_STRB' [/proj/xbuilds/2018.3.1_0326_0329/infra/XSIM/lin/.cxl.ip/incl/processing_system7_vip_v1_0_6_axi_gp.v:208]
+WARNING: [VRFC 10-3091] actual bit length 12 differs from formal bit length 6 for port 'm_axi_bid' [/wrk/2018.sub/2018.3.1/continuous/2019_03_26_2489853/packages/customer/vivado/data/ip/xilinx/processing_system7_vip_v1_0/hdl/processing_system7_vip_v1_0_vl_rfs.sv:5463]
+WARNING: [VRFC 10-3091] actual bit length 12 differs from formal bit length 6 for port 'm_axi_rid' [/wrk/2018.sub/2018.3.1/continuous/2019_03_26_2489853/packages/customer/vivado/data/ip/xilinx/processing_system7_vip_v1_0/hdl/processing_system7_vip_v1_0_vl_rfs.sv:5481]
+WARNING: [VRFC 10-3091] actual bit length 128 differs from formal bit length 64 for port 'WR_DATA_STRB' [/proj/xbuilds/2018.3.1_0326_0329/infra/XSIM/lin/.cxl.ip/incl/processing_system7_vip_v1_0_6_axi_gp.v:292]
+WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 9 for port 'WR_BYTES' [/proj/xbuilds/2018.3.1_0326_0329/infra/XSIM/lin/.cxl.ip/incl/processing_system7_vip_v1_0_6_axi_hp.v:80]
+WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 9 for port 'RD_BYTES' [/proj/xbuilds/2018.3.1_0326_0329/infra/XSIM/lin/.cxl.ip/incl/processing_system7_vip_v1_0_6_axi_hp.v:89]
+WARNING: [VRFC 10-3091] actual bit length 12 differs from formal bit length 6 for port 'm_axi_bid' [/wrk/2018.sub/2018.3.1/continuous/2019_03_26_2489853/packages/customer/vivado/data/ip/xilinx/processing_system7_vip_v1_0/hdl/processing_system7_vip_v1_0_vl_rfs.sv:10170]
+WARNING: [VRFC 10-3091] actual bit length 12 differs from formal bit length 6 for port 'm_axi_rid' [/wrk/2018.sub/2018.3.1/continuous/2019_03_26_2489853/packages/customer/vivado/data/ip/xilinx/processing_system7_vip_v1_0/hdl/processing_system7_vip_v1_0_vl_rfs.sv:10188]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 64 for port 'm_axi_rdata' [/wrk/2018.sub/2018.3.1/continuous/2019_03_26_2489853/packages/customer/vivado/data/ip/xilinx/processing_system7_vip_v1_0/hdl/processing_system7_vip_v1_0_vl_rfs.sv:10189]
+WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 9 for port 'WR_BYTES' [/proj/xbuilds/2018.3.1_0326_0329/infra/XSIM/lin/.cxl.ip/incl/processing_system7_vip_v1_0_6_axi_hp.v:165]
+WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 9 for port 'RD_BYTES' [/proj/xbuilds/2018.3.1_0326_0329/infra/XSIM/lin/.cxl.ip/incl/processing_system7_vip_v1_0_6_axi_hp.v:174]
+WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 9 for port 'WR_BYTES' [/proj/xbuilds/2018.3.1_0326_0329/infra/XSIM/lin/.cxl.ip/incl/processing_system7_vip_v1_0_6_axi_hp.v:251]
+WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 9 for port 'RD_BYTES' [/proj/xbuilds/2018.3.1_0326_0329/infra/XSIM/lin/.cxl.ip/incl/processing_system7_vip_v1_0_6_axi_hp.v:260]
+WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 9 for port 'WR_BYTES' [/proj/xbuilds/2018.3.1_0326_0329/infra/XSIM/lin/.cxl.ip/incl/processing_system7_vip_v1_0_6_axi_hp.v:337]
+WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 9 for port 'RD_BYTES' [/proj/xbuilds/2018.3.1_0326_0329/infra/XSIM/lin/.cxl.ip/incl/processing_system7_vip_v1_0_6_axi_hp.v:346]
+WARNING: [VRFC 10-3091] actual bit length 12 differs from formal bit length 3 for port 'm_axi_bid' [/wrk/2018.sub/2018.3.1/continuous/2019_03_26_2489853/packages/customer/vivado/data/ip/xilinx/processing_system7_vip_v1_0/hdl/processing_system7_vip_v1_0_vl_rfs.sv:7074]
+WARNING: [VRFC 10-3091] actual bit length 12 differs from formal bit length 3 for port 'm_axi_rid' [/wrk/2018.sub/2018.3.1/continuous/2019_03_26_2489853/packages/customer/vivado/data/ip/xilinx/processing_system7_vip_v1_0/hdl/processing_system7_vip_v1_0_vl_rfs.sv:7092]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 64 for port 'm_axi_rdata' [/wrk/2018.sub/2018.3.1/continuous/2019_03_26_2489853/packages/customer/vivado/data/ip/xilinx/processing_system7_vip_v1_0/hdl/processing_system7_vip_v1_0_vl_rfs.sv:7093]
+WARNING: [VRFC 10-3027] 'ocm_wr_strb_port0' was previously declared with a different range [/wrk/2018.sub/2018.3.1/continuous/2019_03_26_2489853/packages/customer/vivado/data/ip/xilinx/processing_system7_vip_v1_0/hdl/processing_system7_vip_v1_0_vl_rfs.sv:3726]
+WARNING: [VRFC 10-3283] element index 64 into 'wrp_strb' is out of bounds [/wrk/2018.sub/2018.3.1/continuous/2019_03_26_2489853/packages/customer/vivado/data/ip/xilinx/processing_system7_vip_v1_0/hdl/processing_system7_vip_v1_0_vl_rfs.sv:6051]
+WARNING: [VRFC 10-3283] element index 128 into 'wrp_strb' is out of bounds [/wrk/2018.sub/2018.3.1/continuous/2019_03_26_2489853/packages/customer/vivado/data/ip/xilinx/processing_system7_vip_v1_0/hdl/processing_system7_vip_v1_0_vl_rfs.sv:10811]
+WARNING: [VRFC 10-3283] element index 128 into 'wrp_strb' is out of bounds [/wrk/2018.sub/2018.3.1/continuous/2019_03_26_2489853/packages/customer/vivado/data/ip/xilinx/processing_system7_vip_v1_0/hdl/processing_system7_vip_v1_0_vl_rfs.sv:7689]
+WARNING: [VRFC 10-3705] select index 4 into 'wr_fifo_rd_ptr' is out of bounds [/wrk/2018.sub/2018.3.1/continuous/2019_03_26_2489853/packages/customer/vivado/data/ip/xilinx/processing_system7_vip_v1_0/hdl/processing_system7_vip_v1_0_vl_rfs.sv:7902]
+WARNING: [VRFC 10-3705] select index 4 into 'ar_cnt' is out of bounds [/wrk/2018.sub/2018.3.1/continuous/2019_03_26_2489853/packages/customer/vivado/data/ip/xilinx/processing_system7_vip_v1_0/hdl/processing_system7_vip_v1_0_vl_rfs.sv:8041]
+WARNING: [VRFC 10-3705] select index 4 into 'wr_rresp_cnt' is out of bounds [/wrk/2018.sub/2018.3.1/continuous/2019_03_26_2489853/packages/customer/vivado/data/ip/xilinx/processing_system7_vip_v1_0/hdl/processing_system7_vip_v1_0_vl_rfs.sv:8138]
+WARNING: [VRFC 10-3705] select index 4 into 'rd_fifo_wr_ptr' is out of bounds [/wrk/2018.sub/2018.3.1/continuous/2019_03_26_2489853/packages/customer/vivado/data/ip/xilinx/processing_system7_vip_v1_0/hdl/processing_system7_vip_v1_0_vl_rfs.sv:8157]
+WARNING: [VRFC 10-3705] select index 4 into 'rd_cnt' is out of bounds [/wrk/2018.sub/2018.3.1/continuous/2019_03_26_2489853/packages/customer/vivado/data/ip/xilinx/processing_system7_vip_v1_0/hdl/processing_system7_vip_v1_0_vl_rfs.sv:8298]
+WARNING: [VRFC 10-3705] select index 4 into 'rresp_time_cnt' is out of bounds [/wrk/2018.sub/2018.3.1/continuous/2019_03_26_2489853/packages/customer/vivado/data/ip/xilinx/processing_system7_vip_v1_0/hdl/processing_system7_vip_v1_0_vl_rfs.sv:8303]
+WARNING: [VRFC 10-3705] select index 4 into 'rd_fifo_rd_ptr' is out of bounds [/wrk/2018.sub/2018.3.1/continuous/2019_03_26_2489853/packages/customer/vivado/data/ip/xilinx/processing_system7_vip_v1_0/hdl/processing_system7_vip_v1_0_vl_rfs.sv:8308]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling package synopsys.attributes
+Compiling package ieee.std_logic_misc
+Compiling package unisim.vcomponents
+Compiling package ieee.vital_timing
+Compiling package ieee.vital_primitives
+Compiling package unisim.vpkg
+Compiling package xilinx_vip.axi_vip_pkg
+Compiling package xilinx_vip.xil_common_vip_pkg
+Compiling package std.std
+Compiling module xil_defaultlib.read_ctrl
+Compiling module xil_defaultlib.write_ctrl
+Compiling module fifo_generator_v13_2_3.fifo_generator_v13_2_3_sync_stag...
+Compiling module fifo_generator_v13_2_3.fifo_generator_v13_2_3_bhv_ver_a...
+Compiling module fifo_generator_v13_2_3.fifo_generator_v13_2_3_CONV_VER(...
+Compiling module fifo_generator_v13_2_3.fifo_generator_vlog_beh(C_DATA_C...
+Compiling module fifo_generator_v13_2_3.fifo_generator_v13_2_3(C_EN_SAFE...
+Compiling module xil_defaultlib.fifo_generator_0
+Compiling module xil_defaultlib.pdm_m
+Compiling module xil_defaultlib.MYIP_TOP
+Compiling module xil_defaultlib.design_1_MYIP_TOP_0_0
+Compiling architecture implementation of entity axi_ahblite_bridge_v3_0_15.ahb_skid_buf [\ahb_skid_buf(c_s_axi_id_width=1...]
+Compiling architecture rtl of entity axi_ahblite_bridge_v3_0_15.axi_slv_if [\axi_slv_if(c_family="zynq",c_s_...]
+Compiling architecture rtl of entity axi_ahblite_bridge_v3_0_15.ahb_mstr_if [ahb_mstr_if_default]
+Compiling architecture rtl of entity axi_ahblite_bridge_v3_0_15.time_out [\time_out(c_family="zynq")(1,4)\]
+Compiling architecture rtl of entity axi_ahblite_bridge_v3_0_15.axi_ahblite_bridge [\axi_ahblite_bridge(c_family="zy...]
+Compiling architecture design_1_axi_ahblite_bridge_0_0_arch of entity xil_defaultlib.design_1_axi_ahblite_bridge_0_0 [design_1_axi_ahblite_bridge_0_0_...]
+Compiling module axi_protocol_converter_v2_1_18.axi_protocol_converter_v2_1_18_a...
+Compiling module xil_defaultlib.design_1_auto_pc_0
+Compiling module xil_defaultlib.s00_couplers_imp_O7FAN0
+Compiling module xil_defaultlib.design_1_axi_interconnect_0_0
+Compiling module processing_system7_vip_v1_0_6.processing_system7_vip_v1_0_6_ge...
+Compiling module processing_system7_vip_v1_0_6.processing_system7_vip_v1_0_6_ge...
+Compiling module processing_system7_vip_v1_0_6.processing_system7_vip_v1_0_6_ar...
+Compiling module processing_system7_vip_v1_0_6.processing_system7_vip_v1_0_6_ar...
+Compiling module processing_system7_vip_v1_0_6.processing_system7_vip_v1_0_6_fm...
+Compiling module processing_system7_vip_v1_0_6.processing_system7_vip_v1_0_6_ar...
+Compiling module processing_system7_vip_v1_0_6.processing_system7_vip_v1_0_6_ar...
+Compiling module processing_system7_vip_v1_0_6.processing_system7_vip_v1_0_6_ar...
+Compiling module processing_system7_vip_v1_0_6.processing_system7_vip_v1_0_6_ar...
+Compiling module processing_system7_vip_v1_0_6.processing_system7_vip_v1_0_6_ss...
+Compiling module processing_system7_vip_v1_0_6.processing_system7_vip_v1_0_6_in...
+Compiling module processing_system7_vip_v1_0_6.processing_system7_vip_v1_0_6_sp...
+Compiling module processing_system7_vip_v1_0_6.processing_system7_vip_v1_0_6_dd...
+Compiling module processing_system7_vip_v1_0_6.processing_system7_vip_v1_0_6_oc...
+Compiling module processing_system7_vip_v1_0_6.processing_system7_vip_v1_0_6_oc...
+Compiling module processing_system7_vip_v1_0_6.processing_system7_vip_v1_0_6_re...
+Compiling module processing_system7_vip_v1_0_6.processing_system7_vip_v1_0_6_re...
+Compiling module xilinx_vip.axi_vip_axi4pc(WDATA_WIDTH=32,RD...
+Compiling module xilinx_vip.cb
+Compiling module xilinx_vip.axi_vip_if(C_AXI_PROTOCOL=1,C_AX...
+Compiling module axi_vip_v1_1_4.axi_vip_v1_1_4_top(C_AXI_PROTOCO...
+Compiling module processing_system7_vip_v1_0_6.processing_system7_vip_v1_0_6_ax...
+Compiling module processing_system7_vip_v1_0_6.processing_system7_vip_v1_0_6_ax...
+Compiling module xilinx_vip.axi_vip_axi4pc(WDATA_WIDTH=32,RD...
+Compiling module xilinx_vip.cb
+Compiling module xilinx_vip.axi_vip_if(C_AXI_PROTOCOL=1,C_AX...
+Compiling module axi_vip_v1_1_4.axi_vip_v1_1_4_top(C_AXI_PROTOCO...
+Compiling module processing_system7_vip_v1_0_6.processing_system7_vip_v1_0_6_ax...
+Compiling module processing_system7_vip_v1_0_6.processing_system7_vip_v1_0_6_ax...
+Compiling module xilinx_vip.axi_vip_axi4pc(PROTOCOL=1,RID_WI...
+Compiling module xilinx_vip.cb
+Compiling module xilinx_vip.axi_vip_if(C_AXI_PROTOCOL=1,C_AX...
+Compiling module axi_vip_v1_1_4.axi_vip_v1_1_4_top(C_AXI_PROTOCO...
+Compiling module processing_system7_vip_v1_0_6.processing_system7_vip_v1_0_6_in...
+Compiling module processing_system7_vip_v1_0_6.processing_system7_vip_v1_0_6_af...
+Compiling module processing_system7_vip_v1_0_6.processing_system7_vip_v1_0_6_af...
+Compiling module processing_system7_vip_v1_0_6.processing_system7_vip_v1_0_6_af...
+Compiling module processing_system7_vip_v1_0_6.processing_system7_vip_v1_0_6_af...
+Compiling module xilinx_vip.axi_vip_axi4pc(PROTOCOL=1,RID_WI...
+Compiling module xilinx_vip.cb
+Compiling module xilinx_vip.axi_vip_if(C_AXI_PROTOCOL=1,C_AX...
+Compiling module axi_vip_v1_1_4.axi_vip_v1_1_4_top(C_AXI_PROTOCO...
+Compiling module processing_system7_vip_v1_0_6.processing_system7_vip_v1_0_6_ax...
+Compiling module processing_system7_vip_v1_0_6.processing_system7_vip_v1_0_6(C_...
+Compiling module xil_defaultlib.design_1_processing_system7_0_0
+Compiling architecture fdre_v of entity unisim.FDRE [fdre_default]
+Compiling architecture fdre_v of entity unisim.FDRE [\FDRE(init='1')\]
+Compiling architecture fdr_v of entity unisim.FDR [fdr_default]
+Compiling architecture implementation of entity lib_cdc_v1_0_2.cdc_sync [\cdc_sync(c_vector_width=2,c_mtb...]
+Compiling architecture srl16e_v of entity unisim.SRL16E [\SRL16E(init="1111111111111111")...]
+Compiling architecture srl16_v of entity unisim.SRL16 [\SRL16(init="1111111111111111")(...]
+Compiling architecture imp of entity proc_sys_reset_v5_0_13.lpf [\lpf(c_ext_rst_width=4,c_aux_rst...]
+Compiling architecture imp of entity proc_sys_reset_v5_0_13.upcnt_n [\upcnt_n(c_size=6)\]
+Compiling architecture imp of entity proc_sys_reset_v5_0_13.sequence_psr [sequence_psr_default]
+Compiling architecture imp of entity proc_sys_reset_v5_0_13.proc_sys_reset [\proc_sys_reset(c_family="zynq",...]
+Compiling architecture design_1_rst_ps7_0_100m_0_arch of entity xil_defaultlib.design_1_rst_ps7_0_100M_0 [design_1_rst_ps7_0_100m_0_defaul...]
+Compiling module xlconstant_v1_1_5.xlconstant_v1_1_5_xlconstant(CON...
+Compiling module xil_defaultlib.design_1_xlconstant_0_0
+Compiling module xil_defaultlib.design_1
+Compiling module xil_defaultlib.design_1_wrapper
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot design_1_wrapper_behav
+
+****** Webtalk v2018.3.1 (64-bit)
+  **** SW Build 2489853 on Tue Mar 26 04:20:25 MDT 2019
+  **** IP Build 2486929 on Tue Mar 26 06:44:21 MDT 2019
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+source D:/Vivado/pdm_system/zedboard.sim/sim_1/behav/xsim/xsim.dir/design_1_wrapper_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Mon Jan 18 11:02:10 2021...
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:19 . Memory (MB): peak = 3492.180 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '19' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Vivado/pdm_system/zedboard.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "design_1_wrapper_behav -key {Behavioral:sim_1:Functional:design_1_wrapper} -tclbatch {design_1_wrapper.tcl} -protoinst "protoinst_files/design_1.protoinst" -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2018.3
+INFO: [Wavedata 42-565] Reading protoinst file protoinst_files/design_1.protoinst
+INFO: [Wavedata 42-564]   Found protocol instance at /design_1_wrapper/design_1_i//axi_ahblite_bridge_0/AXI4
+INFO: [Wavedata 42-564]   Found protocol instance at /design_1_wrapper/design_1_i//axi_interconnect_0/M00_AXI
+INFO: [Wavedata 42-564]   Found protocol instance at /design_1_wrapper/design_1_i//axi_interconnect_0/S00_AXI
+INFO: [Wavedata 42-564]   Found protocol instance at /design_1_wrapper/design_1_i//axi_interconnect_0/s00_couplers/M_AXI
+INFO: [Wavedata 42-564]   Found protocol instance at /design_1_wrapper/design_1_i//axi_interconnect_0/s00_couplers/S_AXI
+INFO: [Wavedata 42-564]   Found protocol instance at /design_1_wrapper/design_1_i//axi_interconnect_0/s00_couplers/auto_pc/M_AXI
+INFO: [Wavedata 42-564]   Found protocol instance at /design_1_wrapper/design_1_i//axi_interconnect_0/s00_couplers/auto_pc/S_AXI
+INFO: [Wavedata 42-564]   Found protocol instance at /design_1_wrapper/design_1_i//processing_system7_0/M_AXI_GP0
+Time resolution is 1 ps
+source design_1_wrapper.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+WARNING: Behavioral models for independent clock FIFO configurations do not model synchronization delays. The behavioral models are functionally correct, and will represent the behavior of the configured FIFO. See the FIFO Generator User Guide for more information.
+XilinxAXIVIP: Found at Path: design_1_wrapper.design_1_i.processing_system7_0.inst.M_AXI_GP0.master
+[0] : *ZYNQ_VIP_INFO : M_AXI_GP0 : Port is ENABLED.
+XilinxAXIVIP: Found at Path: design_1_wrapper.design_1_i.processing_system7_0.inst.M_AXI_GP1.master
+[0] : *ZYNQ_VIP_INFO : M_AXI_GP1 : Port is DISABLED.
+XilinxAXIVIP: Found at Path: design_1_wrapper.design_1_i.processing_system7_0.inst.S_AXI_GP0.slave
+[0] : *ZYNQ_VIP_INFO : S_AXI_GP0 : Port is DISABLED.
+XilinxAXIVIP: Found at Path: design_1_wrapper.design_1_i.processing_system7_0.inst.S_AXI_GP1.slave
+[0] : *ZYNQ_VIP_INFO : S_AXI_GP1 : Port is DISABLED.
+XilinxAXIVIP: Found at Path: design_1_wrapper.design_1_i.processing_system7_0.inst.S_AXI_HP0.slave
+[0] : *ZYNQ_VIP_INFO : S_AXI_HP0 : Port is DISABLED.
+                   0 BEFORE checking line ...... x
+                   0 AFTER checking line ...... x
+XilinxAXIVIP: Found at Path: design_1_wrapper.design_1_i.processing_system7_0.inst.S_AXI_HP1.slave
+[0] : *ZYNQ_VIP_INFO : S_AXI_HP1 : Port is DISABLED.
+                   0 BEFORE checking line ...... x
+                   0 AFTER checking line ...... x
+XilinxAXIVIP: Found at Path: design_1_wrapper.design_1_i.processing_system7_0.inst.S_AXI_HP2.slave
+[0] : *ZYNQ_VIP_INFO : S_AXI_HP2 : Port is DISABLED.
+                   0 BEFORE checking line ...... x
+                   0 AFTER checking line ...... x
+XilinxAXIVIP: Found at Path: design_1_wrapper.design_1_i.processing_system7_0.inst.S_AXI_HP3.slave
+[0] : *ZYNQ_VIP_INFO : S_AXI_HP3 : Port is DISABLED.
+                   0 BEFORE checking line ...... x
+                   0 AFTER checking line ...... x
+XilinxAXIVIP: Found at Path: design_1_wrapper.design_1_i.processing_system7_0.inst.S_AXI_ACP.slave
+[0] : *ZYNQ_VIP_INFO : S_AXI_ACP : Port is DISABLED.
+                   0 else checking line ......x
+WARNING: 5 ns design_1_wrapper.design_1_i.processing_system7_0.inst.M_AXI_GP0.master.IF : ARESET_N can't be X/Z after 1 cycle of clock. To downgrade, use <hierarchy_path to VIP>.IF.set_enable_xchecks_to_warn(), or filter using clr_enable_xchecks.
+xsim: Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 3567.070 ; gain = 74.891
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'design_1_wrapper_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:05 ; elapsed = 00:00:29 . Memory (MB): peak = 3567.070 ; gain = 75.863
+create_wave_config; add_wave /; set_property needs_save false [current_wave_config]
+current_wave_config {Untitled 2}
+Untitled 2
+add_wave {{/design_1_wrapper/design_1_i/MYIP_TOP_0/g_hclk_es1}} {{/design_1_wrapper/design_1_i/MYIP_TOP_0/hreset_n}} {{/design_1_wrapper/design_1_i/MYIP_TOP_0/haddr}} {{/design_1_wrapper/design_1_i/MYIP_TOP_0/htrans}} {{/design_1_wrapper/design_1_i/MYIP_TOP_0/hwrite}} {{/design_1_wrapper/design_1_i/MYIP_TOP_0/hsize}} {{/design_1_wrapper/design_1_i/MYIP_TOP_0/hburst}} {{/design_1_wrapper/design_1_i/MYIP_TOP_0/hwdata}} {{/design_1_wrapper/design_1_i/MYIP_TOP_0/hready}} {{/design_1_wrapper/design_1_i/MYIP_TOP_0/hprot}} {{/design_1_wrapper/design_1_i/MYIP_TOP_0/hsel_es1}} {{/design_1_wrapper/design_1_i/MYIP_TOP_0/hrdata_es1}} {{/design_1_wrapper/design_1_i/MYIP_TOP_0/hresp_es1}} {{/design_1_wrapper/design_1_i/MYIP_TOP_0/hreadyout_es1}} {{/design_1_wrapper/design_1_i/MYIP_TOP_0/pdm_in}} {{/design_1_wrapper/design_1_i/MYIP_TOP_0/pdm_signal}} 
+current_wave_config {Untitled 2}
+Untitled 2
+add_wave {{/design_1_wrapper/design_1_i/MYIP_TOP_0/inst/pdm/AHBclk}} {{/design_1_wrapper/design_1_i/MYIP_TOP_0/inst/pdm/PDMclk}} {{/design_1_wrapper/design_1_i/MYIP_TOP_0/inst/pdm/rst}} {{/design_1_wrapper/design_1_i/MYIP_TOP_0/inst/pdm/ctrl}} {{/design_1_wrapper/design_1_i/MYIP_TOP_0/inst/pdm/addr}} {{/design_1_wrapper/design_1_i/MYIP_TOP_0/inst/pdm/pdm_signal}} {{/design_1_wrapper/design_1_i/MYIP_TOP_0/inst/pdm/dout}} {{/design_1_wrapper/design_1_i/MYIP_TOP_0/inst/pdm/bsy}} {{/design_1_wrapper/design_1_i/MYIP_TOP_0/inst/pdm/empty_signal}} {{/design_1_wrapper/design_1_i/MYIP_TOP_0/inst/pdm/RW}} {{/design_1_wrapper/design_1_i/MYIP_TOP_0/inst/pdm/memory_idx}} {{/design_1_wrapper/design_1_i/MYIP_TOP_0/inst/pdm/pdm_array}} {{/design_1_wrapper/design_1_i/MYIP_TOP_0/inst/pdm/cnt_en}} {{/design_1_wrapper/design_1_i/MYIP_TOP_0/inst/pdm/sel_clk}} {{/design_1_wrapper/design_1_i/MYIP_TOP_0/inst/pdm/w_i}} {{/design_1_wrapper/design_1_i/MYIP_TOP_0/inst/pdm/full_signal}} {{/design_1_wrapper/design_1_i/MYIP_TOP_0/inst/pdm/wr_rst_busy}} {{/design_1_wrapper/design_1_i/MYIP_TOP_0/inst/pdm/rd_rst_busy}} 
+launch_simulation -mode post-synthesis -type functional
+INFO: [Vivado 12-5682] Launching post-synthesis functional simulation in 'D:/Vivado/pdm_system/zedboard.sim/sim_1/synth/func/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7z020clg484-1
+INFO: [Netlist 29-17] Analyzing 172 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2018.3.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [d:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc] for cell 'design_1_i/processing_system7_0/inst'
+Finished Parsing XDC File [d:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc] for cell 'design_1_i/processing_system7_0/inst'
+Parsing XDC File [d:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/ip/design_1_rst_ps7_0_100M_0/design_1_rst_ps7_0_100M_0_board.xdc] for cell 'design_1_i/rst_ps7_0_100M/U0'
+Finished Parsing XDC File [d:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/ip/design_1_rst_ps7_0_100M_0/design_1_rst_ps7_0_100M_0_board.xdc] for cell 'design_1_i/rst_ps7_0_100M/U0'
+Parsing XDC File [d:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/ip/design_1_rst_ps7_0_100M_0/design_1_rst_ps7_0_100M_0.xdc] for cell 'design_1_i/rst_ps7_0_100M/U0'
+Finished Parsing XDC File [d:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/ip/design_1_rst_ps7_0_100M_0/design_1_rst_ps7_0_100M_0.xdc] for cell 'design_1_i/rst_ps7_0_100M/U0'
+Parsing XDC File [d:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/ip/ip/fifo_generator_0/fifo_generator_0.xdc] for cell 'design_1_i/MYIP_TOP_0/inst/pdm/async_fifo/U0'
+Finished Parsing XDC File [d:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/ip/ip/fifo_generator_0/fifo_generator_0.xdc] for cell 'design_1_i/MYIP_TOP_0/inst/pdm/async_fifo/U0'
+Parsing XDC File [D:/Vivado/pdm_system/zedboard.srcs/constrs_1/imports/project_1/system.xdc]
+Finished Parsing XDC File [D:/Vivado/pdm_system/zedboard.srcs/constrs_1/imports/project_1/system.xdc]
+Parsing XDC File [d:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/ip/ip/fifo_generator_0/fifo_generator_0_clocks.xdc] for cell 'design_1_i/MYIP_TOP_0/inst/pdm/async_fifo/U0'
+Finished Parsing XDC File [d:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/ip/ip/fifo_generator_0/fifo_generator_0_clocks.xdc] for cell 'design_1_i/MYIP_TOP_0/inst/pdm/async_fifo/U0'
+Sourcing Tcl File [C:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'design_1_i/MYIP_TOP_0/inst/pdm/async_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'design_1_i/MYIP_TOP_0/inst/pdm/async_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst'
+Sourcing Tcl File [C:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'design_1_i/MYIP_TOP_0/inst/pdm/async_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'design_1_i/MYIP_TOP_0/inst/pdm/async_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst'
+Sourcing Tcl File [C:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl] for cell 'design_1_i/MYIP_TOP_0/inst/pdm/async_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gsckt_wrst.gic_rst.xpm_cdc_single_inst_rrst_wr'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl] for cell 'design_1_i/MYIP_TOP_0/inst/pdm/async_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gsckt_wrst.gic_rst.xpm_cdc_single_inst_rrst_wr'
+Sourcing Tcl File [C:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl] for cell 'design_1_i/MYIP_TOP_0/inst/pdm/async_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gsckt_wrst.gic_rst.xpm_cdc_single_inst_wrst_rd'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl] for cell 'design_1_i/MYIP_TOP_0/inst/pdm/async_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gsckt_wrst.gic_rst.xpm_cdc_single_inst_wrst_rd'
+Sourcing Tcl File [C:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_sync_rst.tcl] for cell 'design_1_i/MYIP_TOP_0/inst/pdm/async_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gsckt_wrst.gic_rst.xpm_cdc_sync_rst_inst_wrst'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_sync_rst.tcl] for cell 'design_1_i/MYIP_TOP_0/inst/pdm/async_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gsckt_wrst.gic_rst.xpm_cdc_sync_rst_inst_wrst'
+Sourcing Tcl File [C:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_sync_rst.tcl] for cell 'design_1_i/MYIP_TOP_0/inst/pdm/async_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gsckt_wrst.xpm_cdc_sync_rst_inst_wrst'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_sync_rst.tcl] for cell 'design_1_i/MYIP_TOP_0/inst/pdm/async_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gsckt_wrst.xpm_cdc_sync_rst_inst_wrst'
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 3737.773 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [SIM-utils-24] Writing simulation netlist file for design 'synth_1'...
+INFO: [SIM-utils-25] write_verilog -mode funcsim -nolib -force -file "D:/Vivado/pdm_system/zedboard.sim/sim_1/synth/func/xsim/design_1_wrapper_func_synth.v"
+INFO: [SIM-utils-36] Netlist generated:D:/Vivado/pdm_system/zedboard.sim/sim_1/synth/func/xsim/design_1_wrapper_func_synth.v
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'C:/Xilinx/Vivado/2018.3/data/xsim/xsim.ini' copied to run dir:'D:/Vivado/pdm_system/zedboard.sim/sim_1/synth/func/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'design_1_wrapper' in fileset 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Vivado/pdm_system/zedboard.sim/sim_1/synth/func/xsim'
+"xvlog --incr --relax -L axi_vip_v1_1_4 -L processing_system7_vip_v1_0_6 -L xilinx_vip -prj design_1_wrapper_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Vivado/pdm_system/zedboard.sim/sim_1/synth/func/xsim/design_1_wrapper_func_synth.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MYIP_TOP
+INFO: [VRFC 10-311] analyzing module ahb_mstr_if
+INFO: [VRFC 10-311] analyzing module ahb_skid_buf
+INFO: [VRFC 10-311] analyzing module axi_ahblite_bridge
+INFO: [VRFC 10-311] analyzing module axi_slv_if
+INFO: [VRFC 10-311] analyzing module cdc_sync
+INFO: [VRFC 10-311] analyzing module cdc_sync_0
+INFO: [VRFC 10-311] analyzing module design_1
+INFO: [VRFC 10-311] analyzing module design_1_MYIP_TOP_0_0
+INFO: [VRFC 10-311] analyzing module design_1_auto_pc_0
+INFO: [VRFC 10-311] analyzing module design_1_axi_ahblite_bridge_0_0
+INFO: [VRFC 10-311] analyzing module design_1_axi_interconnect_0_0
+INFO: [VRFC 10-311] analyzing module design_1_processing_system7_0_0
+INFO: [VRFC 10-311] analyzing module design_1_rst_ps7_0_100M_0
+INFO: [VRFC 10-311] analyzing module design_1_wrapper
+INFO: [VRFC 10-311] analyzing module design_1_xlconstant_0_0
+INFO: [VRFC 10-311] analyzing module fifo_generator_0
+INFO: [VRFC 10-311] analyzing module lpf
+INFO: [VRFC 10-311] analyzing module pdm_m
+INFO: [VRFC 10-311] analyzing module proc_sys_reset
+INFO: [VRFC 10-311] analyzing module processing_system7_v5_5_processing_system7
+INFO: [VRFC 10-311] analyzing module read_ctrl
+INFO: [VRFC 10-311] analyzing module s00_couplers_imp_O7FAN0
+INFO: [VRFC 10-311] analyzing module sequence_psr
+INFO: [VRFC 10-311] analyzing module upcnt_n
+INFO: [VRFC 10-311] analyzing module write_ctrl
+INFO: [VRFC 10-311] analyzing module xpm_cdc_gray
+INFO: [VRFC 10-311] analyzing module xpm_cdc_gray__2
+INFO: [VRFC 10-311] analyzing module xpm_cdc_single
+INFO: [VRFC 10-311] analyzing module xpm_cdc_single__2
+INFO: [VRFC 10-311] analyzing module xpm_cdc_sync_rst
+INFO: [VRFC 10-311] analyzing module xpm_cdc_sync_rst__2
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_generic_cstr
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_mux__parameterized0
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized0
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized1
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized10
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized11
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized12
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized13
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized14
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized15
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized16
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized17
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized18
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized19
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized2
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized20
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized21
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized22
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized23
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized24
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized25
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized26
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized27
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized28
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized29
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized3
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized30
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized31
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized32
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized33
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized34
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized35
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized36
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized37
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized38
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized39
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized4
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized40
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized41
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized42
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized43
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized44
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized45
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized46
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized47
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized48
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized49
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized5
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized50
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized51
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized6
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized7
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized8
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized9
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized0
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized1
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized10
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized11
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized12
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized13
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized14
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized15
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized16
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized17
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized18
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized19
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized2
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized20
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized21
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized22
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized23
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized24
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized25
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized26
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized27
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized28
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized29
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized3
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized30
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized31
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized32
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized33
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized34
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized35
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized36
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized37
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized38
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized39
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized4
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized40
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized41
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized42
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized43
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized44
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized45
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized46
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized47
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized48
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized49
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized5
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized50
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized51
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized6
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized7
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized8
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized9
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_top
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_v8_4_2
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_v8_4_2_synth
+INFO: [VRFC 10-311] analyzing module clk_x_pntrs
+INFO: [VRFC 10-311] analyzing module compare
+INFO: [VRFC 10-311] analyzing module compare_1
+INFO: [VRFC 10-311] analyzing module compare_2
+INFO: [VRFC 10-311] analyzing module compare_3
+INFO: [VRFC 10-311] analyzing module fifo_generator_ramfifo
+INFO: [VRFC 10-311] analyzing module fifo_generator_top
+INFO: [VRFC 10-311] analyzing module fifo_generator_v13_2_3
+INFO: [VRFC 10-311] analyzing module fifo_generator_v13_2_3_synth
+INFO: [VRFC 10-311] analyzing module memory
+INFO: [VRFC 10-311] analyzing module rd_bin_cntr
+INFO: [VRFC 10-311] analyzing module rd_logic
+INFO: [VRFC 10-311] analyzing module rd_status_flags_as
+INFO: [VRFC 10-311] analyzing module reset_blk_ramfifo
+INFO: [VRFC 10-311] analyzing module wr_bin_cntr
+INFO: [VRFC 10-311] analyzing module wr_logic
+INFO: [VRFC 10-311] analyzing module wr_status_flags_as
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Vivado/pdm_system/zedboard.sim/sim_1/synth/func/xsim'
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto 9cac544fe869499295db80418a572738 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L xilinx_vip -L unisims_ver -L secureip --snapshot design_1_wrapper_func_synth xil_defaultlib.design_1_wrapper xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module unisims_ver.GND
+Compiling module unisims_ver.LUT6
+Compiling module unisims_ver.FDCE_default
+Compiling module unisims_ver.LUT4
+Compiling module unisims_ver.x_lut1_mux2
+Compiling module unisims_ver.LUT1
+Compiling module unisims_ver.VCC
+Compiling module unisims_ver.FDRE_default
+Compiling module unisims_ver.LUT5
+Compiling module unisims_ver.x_lut3_mux8
+Compiling module unisims_ver.LUT3
+Compiling module unisims_ver.x_lut2_mux4
+Compiling module unisims_ver.LUT2
+Compiling module xil_defaultlib.xpm_cdc_gray
+Compiling module xil_defaultlib.xpm_cdc_gray__2
+Compiling module xil_defaultlib.clk_x_pntrs
+Compiling module unisims_ver.CARRY4
+Compiling module xil_defaultlib.compare_2
+Compiling module xil_defaultlib.compare_3
+Compiling module unisims_ver.FDSE_default
+Compiling module xil_defaultlib.rd_status_flags_as
+Compiling module xil_defaultlib.rd_bin_cntr
+Compiling module xil_defaultlib.rd_logic
+Compiling module xil_defaultlib.compare
+Compiling module xil_defaultlib.compare_1
+Compiling module unisims_ver.FDSE(INIT=1'b0)
+Compiling module xil_defaultlib.wr_status_flags_as
+Compiling module xil_defaultlib.wr_bin_cntr
+Compiling module xil_defaultlib.wr_logic
+Compiling module unisims_ver.MUXF8
+Compiling module unisims_ver.MUXF7
+Compiling module xil_defaultlib.blk_mem_gen_mux__parameterized0
+Compiling module unisims_ver.RB36_INTERNAL_VLOG(READ_WIDTH_A=...
+Compiling module unisims_ver.RAMB36E1(READ_WIDTH_A=9,READ_WID...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper
+Compiling module xil_defaultlib.blk_mem_gen_prim_width
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module unisims_ver.RB36_INTERNAL_VLOG(RAM_EXTENSION...
+Compiling module unisims_ver.RAMB36E1(RAM_EXTENSION_A="LOWER"...
+Compiling module unisims_ver.RB36_INTERNAL_VLOG(RAM_EXTENSION...
+Compiling module unisims_ver.RAMB36E1(RAM_EXTENSION_A="UPPER"...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module unisims_ver.SRL16E_default
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_generic_cstr
+Compiling module xil_defaultlib.blk_mem_gen_top
+Compiling module xil_defaultlib.blk_mem_gen_v8_4_2_synth
+Compiling module xil_defaultlib.blk_mem_gen_v8_4_2
+Compiling module xil_defaultlib.memory
+Compiling module unisims_ver.FDRE(INIT=1'b1)
+Compiling module xil_defaultlib.xpm_cdc_single
+Compiling module xil_defaultlib.xpm_cdc_single__2
+Compiling module xil_defaultlib.xpm_cdc_sync_rst
+Compiling module xil_defaultlib.xpm_cdc_sync_rst__2
+Compiling module xil_defaultlib.reset_blk_ramfifo
+Compiling module xil_defaultlib.fifo_generator_ramfifo
+Compiling module xil_defaultlib.fifo_generator_top
+Compiling module xil_defaultlib.fifo_generator_v13_2_3_synth
+Compiling module xil_defaultlib.fifo_generator_v13_2_3
+Compiling module xil_defaultlib.fifo_generator_0
+Compiling module xil_defaultlib.read_ctrl
+Compiling module unisims_ver.FDPE_default
+Compiling module unisims_ver.FDCE(IS_C_INVERTED=1'b1)
+Compiling module xil_defaultlib.write_ctrl
+Compiling module xil_defaultlib.pdm_m
+Compiling module xil_defaultlib.MYIP_TOP
+Compiling module xil_defaultlib.design_1_MYIP_TOP_0_0
+Compiling module xil_defaultlib.ahb_mstr_if
+Compiling module xil_defaultlib.axi_slv_if
+Compiling module xil_defaultlib.ahb_skid_buf
+Compiling module xil_defaultlib.axi_ahblite_bridge
+Compiling module xil_defaultlib.design_1_axi_ahblite_bridge_0_0
+Compiling module xil_defaultlib.design_1_auto_pc_0
+Compiling module xil_defaultlib.s00_couplers_imp_O7FAN0
+Compiling module xil_defaultlib.design_1_axi_interconnect_0_0
+Compiling module unisims_ver.BIBUF
+Compiling module unisims_ver.PS7
+Compiling module unisims_ver.BUFG
+Compiling module xil_defaultlib.processing_system7_v5_5_processi...
+Compiling module xil_defaultlib.design_1_processing_system7_0_0
+Compiling module xil_defaultlib.cdc_sync
+Compiling module xil_defaultlib.cdc_sync_0
+Compiling module xil_defaultlib.lpf
+Compiling module xil_defaultlib.upcnt_n
+Compiling module xil_defaultlib.sequence_psr
+Compiling module xil_defaultlib.proc_sys_reset
+Compiling module xil_defaultlib.design_1_rst_ps7_0_100M_0
+Compiling module xil_defaultlib.design_1_xlconstant_0_0
+Compiling module xil_defaultlib.design_1
+Compiling module unisims_ver.IBUF
+Compiling module xil_defaultlib.design_1_wrapper
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot design_1_wrapper_func_synth
+
+****** Webtalk v2018.3.1 (64-bit)
+  **** SW Build 2489853 on Tue Mar 26 04:20:25 MDT 2019
+  **** IP Build 2486929 on Tue Mar 26 06:44:21 MDT 2019
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+source D:/Vivado/pdm_system/zedboard.sim/sim_1/synth/func/xsim/xsim.dir/design_1_wrapper_func_synth/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Mon Jan 18 11:08:27 2021...
+run_program: Time (s): cpu = 00:00:01 ; elapsed = 00:00:11 . Memory (MB): peak = 3737.773 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '11' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Vivado/pdm_system/zedboard.sim/sim_1/synth/func/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "design_1_wrapper_func_synth -key {Post-Synthesis:sim_1:Functional:design_1_wrapper} -tclbatch {design_1_wrapper.tcl} -protoinst "protoinst_files/design_1.protoinst" -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2018.3
+INFO: [Wavedata 42-565] Reading protoinst file protoinst_files/design_1.protoinst
+INFO: [Wavedata 42-564]   Found protocol instance at /design_1_wrapper/design_1_i//axi_ahblite_bridge_0/AXI4
+INFO: [Wavedata 42-564]   Found protocol instance at /design_1_wrapper/design_1_i//axi_interconnect_0/M00_AXI
+INFO: [Wavedata 42-564]   Found protocol instance at /design_1_wrapper/design_1_i//axi_interconnect_0/S00_AXI
+INFO: [Wavedata 42-564]   Found protocol instance at /design_1_wrapper/design_1_i//axi_interconnect_0/s00_couplers/M_AXI
+INFO: [Wavedata 42-564]   Found protocol instance at /design_1_wrapper/design_1_i//axi_interconnect_0/s00_couplers/S_AXI
+INFO: [Wavedata 42-564]   Found protocol instance at /design_1_wrapper/design_1_i//axi_interconnect_0/s00_couplers/auto_pc/M_AXI
+INFO: [Wavedata 42-564]   Found protocol instance at /design_1_wrapper/design_1_i//axi_interconnect_0/s00_couplers/auto_pc/S_AXI
+INFO: [Wavedata 42-564]   Found protocol instance at /design_1_wrapper/design_1_i//processing_system7_0/M_AXI_GP0
+WARNING: [Wavedata 42-559] Protocol instance "/design_1_wrapper/design_1_i//axi_interconnect_0/s00_couplers/M_AXI" was created but is non-functional for the following reason(s):
+Couldn't find port object "M_ACLK" for protocol analyzer port "ACLK".
+Couldn't find port object "M_AXI_araddr" for protocol analyzer port "ARADDR".
+Couldn't find port object "M_AXI_arburst" for protocol analyzer port "ARBURST".
+Couldn't find port object "M_AXI_arcache" for protocol analyzer port "ARCACHE".
+Couldn't find port object "M_ARESETN" for protocol analyzer port "ARESETN".
+Couldn't find port object "M_AXI_arid" for protocol analyzer port "ARID".
+Couldn't find port object "M_AXI_arlen" for protocol analyzer port "ARLEN".
+Couldn't find port object "M_AXI_arlock" for protocol analyzer port "ARLOCK".
+Couldn't find port object "M_AXI_arprot" for protocol analyzer port "ARPROT".
+Couldn't find port object "M_AXI_arready" for protocol analyzer port "ARREADY".
+Couldn't find port object "M_AXI_arsize" for protocol analyzer port "ARSIZE".
+Couldn't find port object "M_AXI_arvalid" for protocol analyzer port "ARVALID".
+Couldn't find port object "M_AXI_awaddr" for protocol analyzer port "AWADDR".
+Couldn't find port object "M_AXI_awburst" for protocol analyzer port "AWBURST".
+Couldn't find port object "M_AXI_awcache" for protocol analyzer port "AWCACHE".
+Couldn't find port object "M_AXI_awid" for protocol analyzer port "AWID".
+Couldn't find port object "M_AXI_awlen" for protocol analyzer port "AWLEN".
+Couldn't find port object "M_AXI_awlock" for protocol analyzer port "AWLOCK".
+Couldn't find port object "M_AXI_awprot" for protocol analyzer port "AWPROT".
+Couldn't find port object "M_AXI_awready" for protocol analyzer port "AWREADY".
+Couldn't find port object "M_AXI_awsize" for protocol analyzer port "AWSIZE".
+Couldn't find port object "M_AXI_awvalid" for protocol analyzer port "AWVALID".
+Couldn't find port object "M_AXI_bid" for protocol analyzer port "BID".
+Couldn't find port object "M_AXI_bready" for protocol analyzer port "BREADY".
+Couldn't find port object "M_AXI_bresp" for protocol analyzer port "BRESP".
+Couldn't find port object "M_AXI_bvalid" for protocol analyzer port "BVALID".
+Couldn't find port object "M_AXI_rdata" for protocol analyzer port "RDATA".
+Couldn't find port object "M_AXI_rid" for protocol analyzer port "RID".
+Couldn't find port object "M_AXI_rlast" for protocol analyzer port "RLAST".
+Couldn't find port object "M_AXI_rready" for protocol analyzer port "RREADY".
+Couldn't find port object "M_AXI_rresp" for protocol analyzer port "RRESP".
+Couldn't find port object "M_AXI_rvalid" for protocol analyzer port "RVALID".
+Couldn't find port object "M_AXI_wdata" for protocol analyzer port "WDATA".
+Couldn't find port object "M_AXI_wlast" for protocol analyzer port "WLAST".
+Couldn't find port object "M_AXI_wready" for protocol analyzer port "WREADY".
+Couldn't find port object "M_AXI_wstrb" for protocol analyzer port "WSTRB".
+Couldn't find port object "M_AXI_wvalid" for protocol analyzer port "WVALID".
+Protocol instance has no valid analyzer.  Please configure the protocol instance again.
+
+WARNING: [Wavedata 42-559] Protocol instance "/design_1_wrapper/design_1_i//axi_interconnect_0/s00_couplers/S_AXI" was created but is non-functional for the following reason(s):
+Couldn't find port object "S_ACLK" for protocol analyzer port "ACLK".
+Couldn't find port object "S_AXI_araddr" for protocol analyzer port "ARADDR".
+Couldn't find port object "S_AXI_arburst" for protocol analyzer port "ARBURST".
+Couldn't find port object "S_AXI_arcache" for protocol analyzer port "ARCACHE".
+Couldn't find port object "S_ARESETN" for protocol analyzer port "ARESETN".
+Couldn't find port object "S_AXI_arid" for protocol analyzer port "ARID".
+Couldn't find port object "S_AXI_arlen" for protocol analyzer port "ARLEN".
+Couldn't find port object "S_AXI_arlock" for protocol analyzer port "ARLOCK".
+Couldn't find port object "S_AXI_arprot" for protocol analyzer port "ARPROT".
+Couldn't find port object "S_AXI_arqos" for protocol analyzer port "ARQOS".
+Couldn't find port object "S_AXI_arready" for protocol analyzer port "ARREADY".
+Couldn't find port object "S_AXI_arsize" for protocol analyzer port "ARSIZE".
+Couldn't find port object "S_AXI_arvalid" for protocol analyzer port "ARVALID".
+Couldn't find port object "S_AXI_awaddr" for protocol analyzer port "AWADDR".
+Couldn't find port object "S_AXI_awburst" for protocol analyzer port "AWBURST".
+Couldn't find port object "S_AXI_awcache" for protocol analyzer port "AWCACHE".
+Couldn't find port object "S_AXI_awid" for protocol analyzer port "AWID".
+Couldn't find port object "S_AXI_awlen" for protocol analyzer port "AWLEN".
+Couldn't find port object "S_AXI_awlock" for protocol analyzer port "AWLOCK".
+Couldn't find port object "S_AXI_awprot" for protocol analyzer port "AWPROT".
+Couldn't find port object "S_AXI_awqos" for protocol analyzer port "AWQOS".
+Couldn't find port object "S_AXI_awready" for protocol analyzer port "AWREADY".
+Couldn't find port object "S_AXI_awsize" for protocol analyzer port "AWSIZE".
+Couldn't find port object "S_AXI_awvalid" for protocol analyzer port "AWVALID".
+Couldn't find port object "S_AXI_bid" for protocol analyzer port "BID".
+Couldn't find port object "S_AXI_bready" for protocol analyzer port "BREADY".
+Couldn't find port object "S_AXI_bresp" for protocol analyzer port "BRESP".
+Couldn't find port object "S_AXI_bvalid" for protocol analyzer port "BVALID".
+Couldn't find port object "S_AXI_rdata" for protocol analyzer port "RDATA".
+Couldn't find port object "S_AXI_rid" for protocol analyzer port "RID".
+Couldn't find port object "S_AXI_rlast" for protocol analyzer port "RLAST".
+Couldn't find port object "S_AXI_rready" for protocol analyzer port "RREADY".
+Couldn't find port object "S_AXI_rresp" for protocol analyzer port "RRESP".
+Couldn't find port object "S_AXI_rvalid" for protocol analyzer port "RVALID".
+Couldn't find port object "S_AXI_wdata" for protocol analyzer port "WDATA".
+Couldn't find port object "S_AXI_wid" for protocol analyzer port "WID".
+Couldn't find port object "S_AXI_wlast" for protocol analyzer port "WLAST".
+Couldn't find port object "S_AXI_wready" for protocol analyzer port "WREADY".
+Couldn't find port object "S_AXI_wstrb" for protocol analyzer port "WSTRB".
+Couldn't find port object "S_AXI_wvalid" for protocol analyzer port "WVALID".
+Protocol instance has no valid analyzer.  Please configure the protocol instance again.
+
+Time resolution is 1 ps
+source design_1_wrapper.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+Warning on instance design_1_wrapper.design_1_i.processing_system7_0.inst.PS7_i : The Zynq-7000 All Programmable SoC does not have a simulation model. Behavioral simulation of Zynq-7000 (e.g. Zynq PS7 block) is not supported in any simulator. Please use the AXI BFM simulation model to verify the AXI transactions.
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'design_1_wrapper_func_synth' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:11 ; elapsed = 00:00:24 . Memory (MB): peak = 3737.773 ; gain = 168.414
+launch_simulation -mode post-implementation -type functional
+INFO: [Vivado 12-5682] Launching post-implementation functional simulation in 'D:/Vivado/pdm_system/zedboard.sim/sim_1/impl/func/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-31] Writing simulation netlist file for design 'impl_1'...
+INFO: [SIM-utils-32] write_verilog -mode funcsim -nolib -force -file "D:/Vivado/pdm_system/zedboard.sim/sim_1/impl/func/xsim/design_1_wrapper_func_impl.v"
+INFO: [SIM-utils-36] Netlist generated:D:/Vivado/pdm_system/zedboard.sim/sim_1/impl/func/xsim/design_1_wrapper_func_impl.v
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'C:/Xilinx/Vivado/2018.3/data/xsim/xsim.ini' copied to run dir:'D:/Vivado/pdm_system/zedboard.sim/sim_1/impl/func/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'design_1_wrapper' in fileset 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Vivado/pdm_system/zedboard.sim/sim_1/impl/func/xsim'
+"xvlog --incr --relax -L axi_vip_v1_1_4 -L processing_system7_vip_v1_0_6 -L xilinx_vip -prj design_1_wrapper_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Vivado/pdm_system/zedboard.sim/sim_1/impl/func/xsim/design_1_wrapper_func_impl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MYIP_TOP
+INFO: [VRFC 10-311] analyzing module ahb_mstr_if
+INFO: [VRFC 10-311] analyzing module ahb_skid_buf
+INFO: [VRFC 10-311] analyzing module axi_ahblite_bridge
+INFO: [VRFC 10-311] analyzing module axi_slv_if
+INFO: [VRFC 10-311] analyzing module cdc_sync
+INFO: [VRFC 10-311] analyzing module cdc_sync_0
+INFO: [VRFC 10-311] analyzing module design_1
+INFO: [VRFC 10-311] analyzing module design_1_MYIP_TOP_0_0
+INFO: [VRFC 10-311] analyzing module design_1_auto_pc_0
+INFO: [VRFC 10-311] analyzing module design_1_axi_ahblite_bridge_0_0
+INFO: [VRFC 10-311] analyzing module design_1_axi_interconnect_0_0
+INFO: [VRFC 10-311] analyzing module design_1_processing_system7_0_0
+INFO: [VRFC 10-311] analyzing module design_1_rst_ps7_0_100M_0
+INFO: [VRFC 10-311] analyzing module design_1_wrapper
+INFO: [VRFC 10-311] analyzing module fifo_generator_0
+INFO: [VRFC 10-311] analyzing module lpf
+INFO: [VRFC 10-311] analyzing module pdm_m
+INFO: [VRFC 10-311] analyzing module proc_sys_reset
+INFO: [VRFC 10-311] analyzing module processing_system7_v5_5_processing_system7
+INFO: [VRFC 10-311] analyzing module read_ctrl
+INFO: [VRFC 10-311] analyzing module s00_couplers_imp_O7FAN0
+INFO: [VRFC 10-311] analyzing module sequence_psr
+INFO: [VRFC 10-311] analyzing module upcnt_n
+INFO: [VRFC 10-311] analyzing module write_ctrl
+INFO: [VRFC 10-311] analyzing module xpm_cdc_gray
+INFO: [VRFC 10-311] analyzing module xpm_cdc_gray__2
+INFO: [VRFC 10-311] analyzing module xpm_cdc_single
+INFO: [VRFC 10-311] analyzing module xpm_cdc_single__2
+INFO: [VRFC 10-311] analyzing module xpm_cdc_sync_rst
+INFO: [VRFC 10-311] analyzing module xpm_cdc_sync_rst__2
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_generic_cstr
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_mux__parameterized0
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized0
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized1
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized10
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized11
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized12
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized13
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized14
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized15
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized16
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized17
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized18
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized19
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized2
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized20
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized21
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized22
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized23
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized24
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized25
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized26
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized27
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized28
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized29
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized3
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized30
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized31
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized32
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized33
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized34
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized35
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized36
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized37
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized38
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized39
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized4
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized40
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized41
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized42
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized43
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized44
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized45
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized46
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized47
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized48
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized49
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized5
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized50
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized51
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized6
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized7
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized8
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_width__parameterized9
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized0
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized1
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized10
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized11
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized12
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized13
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized14
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized15
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized16
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized17
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized18
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized19
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized2
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized20
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized21
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized22
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized23
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized24
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized25
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized26
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized27
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized28
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized29
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized3
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized30
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized31
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized32
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized33
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized34
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized35
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized36
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized37
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized38
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized39
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized4
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized40
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized41
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized42
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized43
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized44
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized45
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized46
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized47
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized48
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized49
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized5
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized50
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized51
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized6
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized7
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized8
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_prim_wrapper__parameterized9
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_top
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_v8_4_2
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_v8_4_2_synth
+INFO: [VRFC 10-311] analyzing module clk_x_pntrs
+INFO: [VRFC 10-311] analyzing module compare
+INFO: [VRFC 10-311] analyzing module compare_1
+INFO: [VRFC 10-311] analyzing module compare_2
+INFO: [VRFC 10-311] analyzing module compare_3
+INFO: [VRFC 10-311] analyzing module fifo_generator_ramfifo
+INFO: [VRFC 10-311] analyzing module fifo_generator_top
+INFO: [VRFC 10-311] analyzing module fifo_generator_v13_2_3
+INFO: [VRFC 10-311] analyzing module fifo_generator_v13_2_3_synth
+INFO: [VRFC 10-311] analyzing module memory
+INFO: [VRFC 10-311] analyzing module rd_bin_cntr
+INFO: [VRFC 10-311] analyzing module rd_logic
+INFO: [VRFC 10-311] analyzing module rd_status_flags_as
+INFO: [VRFC 10-311] analyzing module reset_blk_ramfifo
+INFO: [VRFC 10-311] analyzing module wr_bin_cntr
+INFO: [VRFC 10-311] analyzing module wr_logic
+INFO: [VRFC 10-311] analyzing module wr_status_flags_as
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '4' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Vivado/pdm_system/zedboard.sim/sim_1/impl/func/xsim'
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto 9cac544fe869499295db80418a572738 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L xilinx_vip -L unisims_ver -L secureip --snapshot design_1_wrapper_func_impl xil_defaultlib.design_1_wrapper xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module unisims_ver.LUT6
+Compiling module unisims_ver.FDCE_default
+Compiling module unisims_ver.LUT4
+Compiling module unisims_ver.FDRE_default
+Compiling module unisims_ver.LUT5
+Compiling module unisims_ver.x_lut3_mux8
+Compiling module unisims_ver.LUT3
+Compiling module unisims_ver.x_lut2_mux4
+Compiling module unisims_ver.LUT2
+Compiling module xil_defaultlib.xpm_cdc_gray
+Compiling module xil_defaultlib.xpm_cdc_gray__2
+Compiling module xil_defaultlib.clk_x_pntrs
+Compiling module unisims_ver.CARRY4
+Compiling module xil_defaultlib.compare_2
+Compiling module xil_defaultlib.compare_3
+Compiling module unisims_ver.FDSE_default
+Compiling module xil_defaultlib.rd_status_flags_as
+Compiling module unisims_ver.x_lut1_mux2
+Compiling module unisims_ver.LUT1
+Compiling module xil_defaultlib.rd_bin_cntr
+Compiling module xil_defaultlib.rd_logic
+Compiling module xil_defaultlib.compare
+Compiling module xil_defaultlib.compare_1
+Compiling module unisims_ver.FDSE(INIT=1'b0)
+Compiling module xil_defaultlib.wr_status_flags_as
+Compiling module xil_defaultlib.wr_bin_cntr
+Compiling module xil_defaultlib.wr_logic
+Compiling module unisims_ver.MUXF8
+Compiling module unisims_ver.MUXF7
+Compiling module xil_defaultlib.blk_mem_gen_mux__parameterized0
+Compiling module unisims_ver.RB36_INTERNAL_VLOG(READ_WIDTH_A=...
+Compiling module unisims_ver.RAMB36E1(READ_WIDTH_A=9,READ_WID...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper
+Compiling module xil_defaultlib.blk_mem_gen_prim_width
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module unisims_ver.RB36_INTERNAL_VLOG(RAM_EXTENSION...
+Compiling module unisims_ver.RAMB36E1(RAM_EXTENSION_A="LOWER"...
+Compiling module unisims_ver.RB36_INTERNAL_VLOG(RAM_EXTENSION...
+Compiling module unisims_ver.RAMB36E1(RAM_EXTENSION_A="UPPER"...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module unisims_ver.SRL16E_default
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_prim_wrapper__parame...
+Compiling module xil_defaultlib.blk_mem_gen_prim_width__paramete...
+Compiling module xil_defaultlib.blk_mem_gen_generic_cstr
+Compiling module xil_defaultlib.blk_mem_gen_top
+Compiling module xil_defaultlib.blk_mem_gen_v8_4_2_synth
+Compiling module xil_defaultlib.blk_mem_gen_v8_4_2
+Compiling module xil_defaultlib.memory
+Compiling module unisims_ver.FDRE(INIT=1'b1)
+Compiling module xil_defaultlib.xpm_cdc_single
+Compiling module xil_defaultlib.xpm_cdc_single__2
+Compiling module xil_defaultlib.xpm_cdc_sync_rst
+Compiling module xil_defaultlib.xpm_cdc_sync_rst__2
+Compiling module xil_defaultlib.reset_blk_ramfifo
+Compiling module xil_defaultlib.fifo_generator_ramfifo
+Compiling module xil_defaultlib.fifo_generator_top
+Compiling module xil_defaultlib.fifo_generator_v13_2_3_synth
+Compiling module xil_defaultlib.fifo_generator_v13_2_3
+Compiling module xil_defaultlib.fifo_generator_0
+Compiling module xil_defaultlib.read_ctrl
+Compiling module unisims_ver.FDPE_default
+Compiling module unisims_ver.FDCE(IS_C_INVERTED=1'b1)
+Compiling module xil_defaultlib.write_ctrl
+Compiling module xil_defaultlib.pdm_m
+Compiling module xil_defaultlib.MYIP_TOP
+Compiling module xil_defaultlib.design_1_MYIP_TOP_0_0
+Compiling module unisims_ver.GND
+Compiling module xil_defaultlib.ahb_mstr_if
+Compiling module xil_defaultlib.axi_slv_if
+Compiling module xil_defaultlib.ahb_skid_buf
+Compiling module xil_defaultlib.axi_ahblite_bridge
+Compiling module xil_defaultlib.design_1_axi_ahblite_bridge_0_0
+Compiling module xil_defaultlib.design_1_auto_pc_0
+Compiling module xil_defaultlib.s00_couplers_imp_O7FAN0
+Compiling module xil_defaultlib.design_1_axi_interconnect_0_0
+Compiling module unisims_ver.BIBUF
+Compiling module unisims_ver.PS7
+Compiling module unisims_ver.BUFG
+Compiling module xil_defaultlib.processing_system7_v5_5_processi...
+Compiling module xil_defaultlib.design_1_processing_system7_0_0
+Compiling module xil_defaultlib.cdc_sync
+Compiling module xil_defaultlib.cdc_sync_0
+Compiling module xil_defaultlib.lpf
+Compiling module xil_defaultlib.upcnt_n
+Compiling module xil_defaultlib.sequence_psr
+Compiling module xil_defaultlib.proc_sys_reset
+Compiling module xil_defaultlib.design_1_rst_ps7_0_100M_0
+Compiling module xil_defaultlib.design_1
+Compiling module unisims_ver.IBUF
+Compiling module xil_defaultlib.design_1_wrapper
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot design_1_wrapper_func_impl
+
+****** Webtalk v2018.3.1 (64-bit)
+  **** SW Build 2489853 on Tue Mar 26 04:20:25 MDT 2019
+  **** IP Build 2486929 on Tue Mar 26 06:44:21 MDT 2019
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+source D:/Vivado/pdm_system/zedboard.sim/sim_1/impl/func/xsim/xsim.dir/design_1_wrapper_func_impl/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Mon Jan 18 11:09:03 2021...
+run_program: Time (s): cpu = 00:00:01 ; elapsed = 00:00:11 . Memory (MB): peak = 3737.773 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '11' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Vivado/pdm_system/zedboard.sim/sim_1/impl/func/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "design_1_wrapper_func_impl -key {Post-Implementation:sim_1:Functional:design_1_wrapper} -tclbatch {design_1_wrapper.tcl} -protoinst "protoinst_files/design_1.protoinst" -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2018.3
+INFO: [Wavedata 42-565] Reading protoinst file protoinst_files/design_1.protoinst
+INFO: [Wavedata 42-564]   Found protocol instance at /design_1_wrapper/design_1_i//axi_ahblite_bridge_0/AXI4
+INFO: [Wavedata 42-564]   Found protocol instance at /design_1_wrapper/design_1_i//axi_interconnect_0/M00_AXI
+INFO: [Wavedata 42-564]   Found protocol instance at /design_1_wrapper/design_1_i//axi_interconnect_0/S00_AXI
+INFO: [Wavedata 42-564]   Found protocol instance at /design_1_wrapper/design_1_i//axi_interconnect_0/s00_couplers/M_AXI
+INFO: [Wavedata 42-564]   Found protocol instance at /design_1_wrapper/design_1_i//axi_interconnect_0/s00_couplers/S_AXI
+INFO: [Wavedata 42-564]   Found protocol instance at /design_1_wrapper/design_1_i//axi_interconnect_0/s00_couplers/auto_pc/M_AXI
+INFO: [Wavedata 42-564]   Found protocol instance at /design_1_wrapper/design_1_i//axi_interconnect_0/s00_couplers/auto_pc/S_AXI
+INFO: [Wavedata 42-564]   Found protocol instance at /design_1_wrapper/design_1_i//processing_system7_0/M_AXI_GP0
+WARNING: [Wavedata 42-559] Protocol instance "/design_1_wrapper/design_1_i//axi_interconnect_0/s00_couplers/M_AXI" was created but is non-functional for the following reason(s):
+Couldn't find port object "M_ACLK" for protocol analyzer port "ACLK".
+Couldn't find port object "M_AXI_araddr" for protocol analyzer port "ARADDR".
+Couldn't find port object "M_AXI_arburst" for protocol analyzer port "ARBURST".
+Couldn't find port object "M_AXI_arcache" for protocol analyzer port "ARCACHE".
+Couldn't find port object "M_ARESETN" for protocol analyzer port "ARESETN".
+Couldn't find port object "M_AXI_arid" for protocol analyzer port "ARID".
+Couldn't find port object "M_AXI_arlen" for protocol analyzer port "ARLEN".
+Couldn't find port object "M_AXI_arlock" for protocol analyzer port "ARLOCK".
+Couldn't find port object "M_AXI_arprot" for protocol analyzer port "ARPROT".
+Couldn't find port object "M_AXI_arready" for protocol analyzer port "ARREADY".
+Couldn't find port object "M_AXI_arsize" for protocol analyzer port "ARSIZE".
+Couldn't find port object "M_AXI_arvalid" for protocol analyzer port "ARVALID".
+Couldn't find port object "M_AXI_awaddr" for protocol analyzer port "AWADDR".
+Couldn't find port object "M_AXI_awburst" for protocol analyzer port "AWBURST".
+Couldn't find port object "M_AXI_awcache" for protocol analyzer port "AWCACHE".
+Couldn't find port object "M_AXI_awid" for protocol analyzer port "AWID".
+Couldn't find port object "M_AXI_awlen" for protocol analyzer port "AWLEN".
+Couldn't find port object "M_AXI_awlock" for protocol analyzer port "AWLOCK".
+Couldn't find port object "M_AXI_awprot" for protocol analyzer port "AWPROT".
+Couldn't find port object "M_AXI_awready" for protocol analyzer port "AWREADY".
+Couldn't find port object "M_AXI_awsize" for protocol analyzer port "AWSIZE".
+Couldn't find port object "M_AXI_awvalid" for protocol analyzer port "AWVALID".
+Couldn't find port object "M_AXI_bid" for protocol analyzer port "BID".
+Couldn't find port object "M_AXI_bready" for protocol analyzer port "BREADY".
+Couldn't find port object "M_AXI_bresp" for protocol analyzer port "BRESP".
+Couldn't find port object "M_AXI_bvalid" for protocol analyzer port "BVALID".
+Couldn't find port object "M_AXI_rdata" for protocol analyzer port "RDATA".
+Couldn't find port object "M_AXI_rid" for protocol analyzer port "RID".
+Couldn't find port object "M_AXI_rlast" for protocol analyzer port "RLAST".
+Couldn't find port object "M_AXI_rready" for protocol analyzer port "RREADY".
+Couldn't find port object "M_AXI_rresp" for protocol analyzer port "RRESP".
+Couldn't find port object "M_AXI_rvalid" for protocol analyzer port "RVALID".
+Couldn't find port object "M_AXI_wdata" for protocol analyzer port "WDATA".
+Couldn't find port object "M_AXI_wlast" for protocol analyzer port "WLAST".
+Couldn't find port object "M_AXI_wready" for protocol analyzer port "WREADY".
+Couldn't find port object "M_AXI_wstrb" for protocol analyzer port "WSTRB".
+Couldn't find port object "M_AXI_wvalid" for protocol analyzer port "WVALID".
+Protocol instance has no valid analyzer.  Please configure the protocol instance again.
+
+WARNING: [Wavedata 42-559] Protocol instance "/design_1_wrapper/design_1_i//axi_interconnect_0/s00_couplers/S_AXI" was created but is non-functional for the following reason(s):
+Couldn't find port object "S_ACLK" for protocol analyzer port "ACLK".
+Couldn't find port object "S_AXI_araddr" for protocol analyzer port "ARADDR".
+Couldn't find port object "S_AXI_arburst" for protocol analyzer port "ARBURST".
+Couldn't find port object "S_AXI_arcache" for protocol analyzer port "ARCACHE".
+Couldn't find port object "S_ARESETN" for protocol analyzer port "ARESETN".
+Couldn't find port object "S_AXI_arid" for protocol analyzer port "ARID".
+Couldn't find port object "S_AXI_arlen" for protocol analyzer port "ARLEN".
+Couldn't find port object "S_AXI_arlock" for protocol analyzer port "ARLOCK".
+Couldn't find port object "S_AXI_arprot" for protocol analyzer port "ARPROT".
+Couldn't find port object "S_AXI_arqos" for protocol analyzer port "ARQOS".
+Couldn't find port object "S_AXI_arready" for protocol analyzer port "ARREADY".
+Couldn't find port object "S_AXI_arsize" for protocol analyzer port "ARSIZE".
+Couldn't find port object "S_AXI_arvalid" for protocol analyzer port "ARVALID".
+Couldn't find port object "S_AXI_awaddr" for protocol analyzer port "AWADDR".
+Couldn't find port object "S_AXI_awburst" for protocol analyzer port "AWBURST".
+Couldn't find port object "S_AXI_awcache" for protocol analyzer port "AWCACHE".
+Couldn't find port object "S_AXI_awid" for protocol analyzer port "AWID".
+Couldn't find port object "S_AXI_awlen" for protocol analyzer port "AWLEN".
+Couldn't find port object "S_AXI_awlock" for protocol analyzer port "AWLOCK".
+Couldn't find port object "S_AXI_awprot" for protocol analyzer port "AWPROT".
+Couldn't find port object "S_AXI_awqos" for protocol analyzer port "AWQOS".
+Couldn't find port object "S_AXI_awready" for protocol analyzer port "AWREADY".
+Couldn't find port object "S_AXI_awsize" for protocol analyzer port "AWSIZE".
+Couldn't find port object "S_AXI_awvalid" for protocol analyzer port "AWVALID".
+Couldn't find port object "S_AXI_bid" for protocol analyzer port "BID".
+Couldn't find port object "S_AXI_bready" for protocol analyzer port "BREADY".
+Couldn't find port object "S_AXI_bresp" for protocol analyzer port "BRESP".
+Couldn't find port object "S_AXI_bvalid" for protocol analyzer port "BVALID".
+Couldn't find port object "S_AXI_rdata" for protocol analyzer port "RDATA".
+Couldn't find port object "S_AXI_rid" for protocol analyzer port "RID".
+Couldn't find port object "S_AXI_rlast" for protocol analyzer port "RLAST".
+Couldn't find port object "S_AXI_rready" for protocol analyzer port "RREADY".
+Couldn't find port object "S_AXI_rresp" for protocol analyzer port "RRESP".
+Couldn't find port object "S_AXI_rvalid" for protocol analyzer port "RVALID".
+Couldn't find port object "S_AXI_wdata" for protocol analyzer port "WDATA".
+Couldn't find port object "S_AXI_wid" for protocol analyzer port "WID".
+Couldn't find port object "S_AXI_wlast" for protocol analyzer port "WLAST".
+Couldn't find port object "S_AXI_wready" for protocol analyzer port "WREADY".
+Couldn't find port object "S_AXI_wstrb" for protocol analyzer port "WSTRB".
+Couldn't find port object "S_AXI_wvalid" for protocol analyzer port "WVALID".
+Protocol instance has no valid analyzer.  Please configure the protocol instance again.
+
+Time resolution is 1 ps
+source design_1_wrapper.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+Warning on instance design_1_wrapper.design_1_i.processing_system7_0.inst.PS7_i : The Zynq-7000 All Programmable SoC does not have a simulation model. Behavioral simulation of Zynq-7000 (e.g. Zynq PS7 block) is not supported in any simulator. Please use the AXI BFM simulation model to verify the AXI transactions.
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'design_1_wrapper_func_impl' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:18 . Memory (MB): peak = 3737.773 ; gain = 0.000
+current_sim simulation_2
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+current_wave_config {Untitled 2}
+Untitled 2
+add_wave {{/design_1_wrapper/design_1_i/MYIP_TOP_0/inst/pdm/AHBclk}} {{/design_1_wrapper/design_1_i/MYIP_TOP_0/inst/pdm/PDMclk}} {{/design_1_wrapper/design_1_i/MYIP_TOP_0/inst/pdm/rst}} {{/design_1_wrapper/design_1_i/MYIP_TOP_0/inst/pdm/ctrl}} {{/design_1_wrapper/design_1_i/MYIP_TOP_0/inst/pdm/addr}} {{/design_1_wrapper/design_1_i/MYIP_TOP_0/inst/pdm/pdm_signal}} {{/design_1_wrapper/design_1_i/MYIP_TOP_0/inst/pdm/dout}} {{/design_1_wrapper/design_1_i/MYIP_TOP_0/inst/pdm/bsy}} {{/design_1_wrapper/design_1_i/MYIP_TOP_0/inst/pdm/empty_signal}} {{/design_1_wrapper/design_1_i/MYIP_TOP_0/inst/pdm/RW}} {{/design_1_wrapper/design_1_i/MYIP_TOP_0/inst/pdm/memory_idx}} {{/design_1_wrapper/design_1_i/MYIP_TOP_0/inst/pdm/pdm_array}} {{/design_1_wrapper/design_1_i/MYIP_TOP_0/inst/pdm/pdm_array[31]}} {{/design_1_wrapper/design_1_i/MYIP_TOP_0/inst/pdm/pdm_array[30]}} {{/design_1_wrapper/design_1_i/MYIP_TOP_0/inst/pdm/pdm_array[29]}} {{/design_1_wrapper/design_1_i/MYIP_TOP_0/inst/pdm/pdm_array[28]}} {{/design_1_wrapper/design_1_i/MYIP_TOP_0/inst/pdm/pdm_array[27]}} {{/design_1_wrapper/design_1_i/MYIP_TOP_0/inst/pdm/pdm_array[26]}} {{/design_1_wrapper/design_1_i/MYIP_TOP_0/inst/pdm/pdm_array[25]}} {{/design_1_wrapper/design_1_i/MYIP_TOP_0/inst/pdm/pdm_array[24]}} {{/design_1_wrapper/design_1_i/MYIP_TOP_0/inst/pdm/pdm_array[23]}} {{/design_1_wrapper/design_1_i/MYIP_TOP_0/inst/pdm/pdm_array[22]}} {{/design_1_wrapper/design_1_i/MYIP_TOP_0/inst/pdm/pdm_array[21]}} {{/design_1_wrapper/design_1_i/MYIP_TOP_0/inst/pdm/pdm_array[20]}} {{/design_1_wrapper/design_1_i/MYIP_TOP_0/inst/pdm/pdm_array[19]}} {{/design_1_wrapper/design_1_i/MYIP_TOP_0/inst/pdm/pdm_array[18]}} {{/design_1_wrapper/design_1_i/MYIP_TOP_0/inst/pdm/pdm_array[17]}} {{/design_1_wrapper/design_1_i/MYIP_TOP_0/inst/pdm/pdm_array[16]}} {{/design_1_wrapper/design_1_i/MYIP_TOP_0/inst/pdm/pdm_array[15]}} {{/design_1_wrapper/design_1_i/MYIP_TOP_0/inst/pdm/pdm_array[14]}} {{/design_1_wrapper/design_1_i/MYIP_TOP_0/inst/pdm/pdm_array[13]}} {{/design_1_wrapper/design_1_i/MYIP_TOP_0/inst/pdm/pdm_array[12]}} {{/design_1_wrapper/design_1_i/MYIP_TOP_0/inst/pdm/pdm_array[11]}} {{/design_1_wrapper/design_1_i/MYIP_TOP_0/inst/pdm/pdm_array[10]}} {{/design_1_wrapper/design_1_i/MYIP_TOP_0/inst/pdm/pdm_array[9]}} {{/design_1_wrapper/design_1_i/MYIP_TOP_0/inst/pdm/pdm_array[8]}} {{/design_1_wrapper/design_1_i/MYIP_TOP_0/inst/pdm/pdm_array[7]}} {{/design_1_wrapper/design_1_i/MYIP_TOP_0/inst/pdm/pdm_array[6]}} {{/design_1_wrapper/design_1_i/MYIP_TOP_0/inst/pdm/pdm_array[5]}} {{/design_1_wrapper/design_1_i/MYIP_TOP_0/inst/pdm/pdm_array[4]}} {{/design_1_wrapper/design_1_i/MYIP_TOP_0/inst/pdm/pdm_array[3]}} {{/design_1_wrapper/design_1_i/MYIP_TOP_0/inst/pdm/pdm_array[2]}} {{/design_1_wrapper/design_1_i/MYIP_TOP_0/inst/pdm/pdm_array[1]}} {{/design_1_wrapper/design_1_i/MYIP_TOP_0/inst/pdm/pdm_array[0]}} {{/design_1_wrapper/design_1_i/MYIP_TOP_0/inst/pdm/cnt_en}} {{/design_1_wrapper/design_1_i/MYIP_TOP_0/inst/pdm/sel_clk}} {{/design_1_wrapper/design_1_i/MYIP_TOP_0/inst/pdm/w_i}} {{/design_1_wrapper/design_1_i/MYIP_TOP_0/inst/pdm/full_signal}} {{/design_1_wrapper/design_1_i/MYIP_TOP_0/inst/pdm/wr_rst_busy}} {{/design_1_wrapper/design_1_i/MYIP_TOP_0/inst/pdm/rd_rst_busy}} 
+current_sim simulation_3
+ERROR: [Vivado 12-106] *** Exception: java.lang.ArrayIndexOutOfBoundsException: 2 (See D:/Vivado/pdm_system/vivado_pid1080.debug)
+ERROR: [Vivado 12-106] *** Exception: java.lang.ArrayIndexOutOfBoundsException: 2 (See D:/Vivado/pdm_system/vivado_pid1080.debug)
+ERROR: [Vivado 12-106] *** Exception: java.lang.ArrayIndexOutOfBoundsException: 2 (See D:/Vivado/pdm_system/vivado_pid1080.debug)
+ERROR: [Vivado 12-106] *** Exception: java.lang.ArrayIndexOutOfBoundsException: 2 (See D:/Vivado/pdm_system/vivado_pid1080.debug)
+ERROR: [Vivado 12-106] *** Exception: java.lang.ArrayIndexOutOfBoundsException: 2 (See D:/Vivado/pdm_system/vivado_pid1080.debug)
+ERROR: [Vivado 12-106] *** Exception: java.lang.ArrayIndexOutOfBoundsException: 2 (See D:/Vivado/pdm_system/vivado_pid1080.debug)
+ERROR: [Common 17-39] 'current_sim' failed due to earlier errors.
+current_sim simulation_1
+close_sim
+Executing Axi4 End Of Simulation checks
+Executing Axi4 End Of Simulation checks
+Executing Axi4 End Of Simulation checks
+Executing Axi4 End Of Simulation checks
+Executing Axi4 End Of Simulation checks
+Executing Axi4 End Of Simulation checks
+Executing Axi4 End Of Simulation checks
+Executing Axi4 End Of Simulation checks
+Executing Axi4 End Of Simulation checks
+INFO: [Simtcl 6-16] Simulation closed
+open_bd_design {D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/design_1.bd}
+update_ip_catalog -rebuild -scan_changes
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/Vivado/catch_pdm_zedboard_new'.
+report_ip_status -name ip_status
+upgrade_ip -vlnv xilinx.com:user:MYIP_TOP:1.0 [get_ips  design_1_MYIP_TOP_0_0] -log ip_upgrade.log
+Upgrading 'D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/design_1.bd'
+INFO: [IP_Flow 19-3422] Upgraded design_1_MYIP_TOP_0_0 (MYIP_TOP_v1_0 1.0) from revision 31 to revision 32
+WARNING: [BD 41-1731] Type mismatch between connected pins: /processing_system7_0/FCLK_CLK0(clk) and /MYIP_TOP_0_upgraded_ipi/g_hclk_es1(undef)
+WARNING: [BD 41-1731] Type mismatch between connected pins: /rst_ps7_0_100M/peripheral_aresetn(rst) and /MYIP_TOP_0_upgraded_ipi/hreset_n(undef)
+Wrote  : <D:\Vivado\pdm_system\zedboard.srcs\sources_1\bd\design_1\design_1.bd> 
+INFO: [Coretcl 2-1525] Wrote upgrade log to 'D:/Vivado/pdm_system/ip_upgrade.log'.
+export_ip_user_files -of_objects [get_ips design_1_MYIP_TOP_0_0] -no_script -sync -force -quiet
+report_ip_status -name ip_status 
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory D:/Vivado/pdm_system/zedboard.runs/synth_1
+
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+WARNING: [BD 41-1271] The connection to the pin: /axi_ahblite_bridge_0/m_ahb_hsize has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /axi_ahblite_bridge_0/m_ahb_haddr has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /axi_ahblite_bridge_0/m_ahb_htrans has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /axi_ahblite_bridge_0/m_ahb_hburst has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /axi_ahblite_bridge_0/m_ahb_hprot has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /MYIP_TOP_0/hrdata_es1 has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /MYIP_TOP_0/hresp_es1 has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /axi_ahblite_bridge_0/m_ahb_hwdata has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /axi_ahblite_bridge_0/m_ahb_hwrite has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+Wrote  : <D:\Vivado\pdm_system\zedboard.srcs\sources_1\bd\design_1\design_1.bd> 
+VHDL Output written to : D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/synth/design_1.v
+VHDL Output written to : D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/sim/design_1.v
+VHDL Output written to : D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_ps7_0_100M .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_ahblite_bridge_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconstant_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block MYIP_TOP_0 .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'd:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_0/s00_couplers/auto_pc .
+Exporting to file D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/hw_handoff/design_1.hwh
+Generated Block Design Tcl file D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/hw_handoff/design_1_bd.tcl
+Generated Hardware Definition File D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/synth/design_1.hwdef
+WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
+[Mon Jan 18 11:19:01 2021] Launched synth_1...
+Run output will be captured here: D:/Vivado/pdm_system/zedboard.runs/synth_1/runme.log
+[Mon Jan 18 11:19:01 2021] Launched impl_1...
+Run output will be captured here: D:/Vivado/pdm_system/zedboard.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 4174.672 ; gain = 34.145
+report_ip_status -name ip_status 
+update_ip_catalog -rebuild -scan_changes
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/Vivado/catch_pdm_zedboard_new'.
+report_ip_status -name ip_status
+upgrade_ip -vlnv xilinx.com:user:MYIP_TOP:1.0 [get_ips  design_1_MYIP_TOP_0_0] -log ip_upgrade.log
+Upgrading 'D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/design_1.bd'
+INFO: [IP_Flow 19-3422] Upgraded design_1_MYIP_TOP_0_0 (MYIP_TOP_v1_0 1.0) from revision 32 to revision 33
+WARNING: [BD 41-1731] Type mismatch between connected pins: /processing_system7_0/FCLK_CLK0(clk) and /MYIP_TOP_0_upgraded_ipi/g_hclk_es1(undef)
+WARNING: [BD 41-1731] Type mismatch between connected pins: /rst_ps7_0_100M/peripheral_aresetn(rst) and /MYIP_TOP_0_upgraded_ipi/hreset_n(undef)
+Wrote  : <D:\Vivado\pdm_system\zedboard.srcs\sources_1\bd\design_1\design_1.bd> 
+INFO: [Coretcl 2-1525] Wrote upgrade log to 'D:/Vivado/pdm_system/ip_upgrade.log'.
+export_ip_user_files -of_objects [get_ips design_1_MYIP_TOP_0_0] -no_script -sync -force -quiet
+report_ip_status -name ip_status 
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory D:/Vivado/pdm_system/zedboard.runs/synth_1
+
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+WARNING: [BD 41-1271] The connection to the pin: /axi_ahblite_bridge_0/m_ahb_hsize has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /axi_ahblite_bridge_0/m_ahb_haddr has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /axi_ahblite_bridge_0/m_ahb_htrans has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /axi_ahblite_bridge_0/m_ahb_hburst has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /axi_ahblite_bridge_0/m_ahb_hprot has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /MYIP_TOP_0/hrdata_es1 has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /MYIP_TOP_0/hresp_es1 has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /axi_ahblite_bridge_0/m_ahb_hwdata has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /axi_ahblite_bridge_0/m_ahb_hwrite has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+Wrote  : <D:\Vivado\pdm_system\zedboard.srcs\sources_1\bd\design_1\design_1.bd> 
+VHDL Output written to : D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/synth/design_1.v
+VHDL Output written to : D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/sim/design_1.v
+VHDL Output written to : D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_ps7_0_100M .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_ahblite_bridge_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconstant_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block MYIP_TOP_0 .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'd:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_0/s00_couplers/auto_pc .
+Exporting to file D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/hw_handoff/design_1.hwh
+Generated Block Design Tcl file D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/hw_handoff/design_1_bd.tcl
+Generated Hardware Definition File D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/synth/design_1.hwdef
+WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
+[Mon Jan 18 11:26:45 2021] Launched synth_1...
+Run output will be captured here: D:/Vivado/pdm_system/zedboard.runs/synth_1/runme.log
+[Mon Jan 18 11:26:45 2021] Launched impl_1...
+Run output will be captured here: D:/Vivado/pdm_system/zedboard.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 4728.852 ; gain = 37.199
+regenerate_bd_layout
+report_ip_status -name ip_status 
+save_bd_design
+Wrote  : <D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210248470371
+update_ip_catalog -rebuild -scan_changes
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/Vivado/catch_pdm_zedboard_new'.
+report_ip_status -name ip_status
+upgrade_ip -vlnv xilinx.com:user:MYIP_TOP:1.0 [get_ips  design_1_MYIP_TOP_0_0] -log ip_upgrade.log
+Upgrading 'D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/design_1.bd'
+INFO: [IP_Flow 19-3422] Upgraded design_1_MYIP_TOP_0_0 (MYIP_TOP_v1_0 1.0) from revision 33 to revision 34
+WARNING: [BD 41-1731] Type mismatch between connected pins: /processing_system7_0/FCLK_CLK0(clk) and /MYIP_TOP_0_upgraded_ipi/g_hclk_es1(undef)
+WARNING: [BD 41-1731] Type mismatch between connected pins: /rst_ps7_0_100M/peripheral_aresetn(rst) and /MYIP_TOP_0_upgraded_ipi/hreset_n(undef)
+Wrote  : <D:\Vivado\pdm_system\zedboard.srcs\sources_1\bd\design_1\design_1.bd> 
+Wrote  : <D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+INFO: [Coretcl 2-1525] Wrote upgrade log to 'D:/Vivado/pdm_system/ip_upgrade.log'.
+export_ip_user_files -of_objects [get_ips design_1_MYIP_TOP_0_0] -no_script -sync -force -quiet
+report_ip_status -name ip_status 
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory D:/Vivado/pdm_system/zedboard.runs/synth_1
+
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+WARNING: [BD 41-1271] The connection to the pin: /axi_ahblite_bridge_0/m_ahb_hsize has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /axi_ahblite_bridge_0/m_ahb_haddr has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /axi_ahblite_bridge_0/m_ahb_htrans has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /axi_ahblite_bridge_0/m_ahb_hburst has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /axi_ahblite_bridge_0/m_ahb_hprot has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /MYIP_TOP_0/hrdata_es1 has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /MYIP_TOP_0/hresp_es1 has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /axi_ahblite_bridge_0/m_ahb_hwdata has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /axi_ahblite_bridge_0/m_ahb_hwrite has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+Wrote  : <D:\Vivado\pdm_system\zedboard.srcs\sources_1\bd\design_1\design_1.bd> 
+VHDL Output written to : D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/synth/design_1.v
+VHDL Output written to : D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/sim/design_1.v
+VHDL Output written to : D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_ps7_0_100M .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_ahblite_bridge_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconstant_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block MYIP_TOP_0 .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'd:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_0/s00_couplers/auto_pc .
+Exporting to file D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/hw_handoff/design_1.hwh
+Generated Block Design Tcl file D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/hw_handoff/design_1_bd.tcl
+Generated Hardware Definition File D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/synth/design_1.hwdef
+WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
+[Mon Jan 18 14:20:16 2021] Launched synth_1...
+Run output will be captured here: D:/Vivado/pdm_system/zedboard.runs/synth_1/runme.log
+[Mon Jan 18 14:20:16 2021] Launched impl_1...
+Run output will be captured here: D:/Vivado/pdm_system/zedboard.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:03 ; elapsed = 00:00:07 . Memory (MB): peak = 4729.234 ; gain = 0.000
+report_ip_status -name ip_status 
+reset_run impl_1 -prev_step 
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+[Mon Jan 18 14:31:04 2021] Launched impl_1...
+Run output will be captured here: D:/Vivado/pdm_system/zedboard.runs/impl_1/runme.log
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210248470371
+INFO: [Labtools 27-1435] Device xc7z020 (JTAG device index = 0) is not programmed (DONE status = 0).
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+close_bd_design [get_bd_designs design_1]
+set_property PROBES.FILE {} [get_hw_devices xc7z020_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z020_1]
+set_property PROGRAM.FILE {D:/Vivado/pdm_system/zedboard.runs/impl_1/design_1_wrapper.bit} [get_hw_devices xc7z020_1]
+program_hw_devices [get_hw_devices xc7z020_1]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7z020_1] 0]
+INFO: [Labtools 27-1434] Device xc7z020 (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
+update_ip_catalog -rebuild -scan_changes
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/Vivado/catch_pdm_zedboard_new'.
+report_ip_status -name ip_status
+upgrade_ip -vlnv xilinx.com:user:MYIP_TOP:1.0 [get_ips  design_1_MYIP_TOP_0_0] -log ip_upgrade.log
+Adding cell -- xilinx.com:ip:axi_ahblite_bridge:3.0 - axi_ahblite_bridge_0
+Adding cell -- xilinx.com:ip:axi_interconnect:2.1 - axi_interconnect_0
+Adding cell -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
+Adding cell -- xilinx.com:ip:xlconstant:1.1 - xlconstant_0
+Adding cell -- xilinx.com:ip:processing_system7:5.5 - processing_system7_0
+Adding cell -- xilinx.com:ip:proc_sys_reset:5.0 - rst_ps7_0_100M
+Adding cell -- xilinx.com:user:MYIP_TOP:1.0 - MYIP_TOP_0
+WARNING: [BD 41-1731] Type mismatch between connected pins: /processing_system7_0/FCLK_CLK0(clk) and /MYIP_TOP_0/g_hclk_es1(undef)
+WARNING: [BD 41-1731] Type mismatch between connected pins: /rst_ps7_0_100M/peripheral_aresetn(rst) and /MYIP_TOP_0/hreset_n(undef)
+Successfully read diagram <design_1> from BD file <D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/design_1.bd>
+Upgrading 'D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/design_1.bd'
+INFO: [IP_Flow 19-3422] Upgraded design_1_MYIP_TOP_0_0 (MYIP_TOP_v1_0 1.0) from revision 34 to revision 35
+WARNING: [BD 41-1731] Type mismatch between connected pins: /processing_system7_0/FCLK_CLK0(clk) and /MYIP_TOP_0_upgraded_ipi/g_hclk_es1(undef)
+WARNING: [BD 41-1731] Type mismatch between connected pins: /rst_ps7_0_100M/peripheral_aresetn(rst) and /MYIP_TOP_0_upgraded_ipi/hreset_n(undef)
+Wrote  : <D:\Vivado\pdm_system\zedboard.srcs\sources_1\bd\design_1\design_1.bd> 
+Wrote  : <D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+INFO: [Coretcl 2-1525] Wrote upgrade log to 'D:/Vivado/pdm_system/ip_upgrade.log'.
+export_ip_user_files -of_objects [get_ips design_1_MYIP_TOP_0_0] -no_script -sync -force -quiet
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory D:/Vivado/pdm_system/zedboard.runs/synth_1
+
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+WARNING: [BD 41-1271] The connection to the pin: /axi_ahblite_bridge_0/m_ahb_hsize has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /axi_ahblite_bridge_0/m_ahb_haddr has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /axi_ahblite_bridge_0/m_ahb_htrans has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /axi_ahblite_bridge_0/m_ahb_hburst has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /axi_ahblite_bridge_0/m_ahb_hprot has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /MYIP_TOP_0/hrdata_es1 has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /MYIP_TOP_0/hresp_es1 has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /axi_ahblite_bridge_0/m_ahb_hwdata has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /axi_ahblite_bridge_0/m_ahb_hwrite has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+Wrote  : <D:\Vivado\pdm_system\zedboard.srcs\sources_1\bd\design_1\design_1.bd> 
+VHDL Output written to : D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/synth/design_1.v
+VHDL Output written to : D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/sim/design_1.v
+VHDL Output written to : D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_ps7_0_100M .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_ahblite_bridge_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconstant_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block MYIP_TOP_0 .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'd:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_0/s00_couplers/auto_pc .
+Exporting to file D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/hw_handoff/design_1.hwh
+Generated Block Design Tcl file D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/hw_handoff/design_1_bd.tcl
+Generated Hardware Definition File D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/synth/design_1.hwdef
+WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
+[Mon Jan 18 14:40:50 2021] Launched synth_1...
+Run output will be captured here: D:/Vivado/pdm_system/zedboard.runs/synth_1/runme.log
+[Mon Jan 18 14:40:50 2021] Launched impl_1...
+Run output will be captured here: D:/Vivado/pdm_system/zedboard.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 4729.234 ; gain = 0.000
+set_property PROBES.FILE {} [get_hw_devices xc7z020_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z020_1]
+set_property PROGRAM.FILE {D:/Vivado/pdm_system/zedboard.runs/impl_1/design_1_wrapper.bit} [get_hw_devices xc7z020_1]
+program_hw_devices [get_hw_devices xc7z020_1]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7z020_1] 0]
+INFO: [Labtools 27-1434] Device xc7z020 (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
+report_ip_status -name ip_status 
+set_property PROBES.FILE {} [get_hw_devices xc7z020_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z020_1]
+set_property PROGRAM.FILE {D:/Vivado/pdm_system/zedboard.runs/impl_1/design_1_wrapper.bit} [get_hw_devices xc7z020_1]
+program_hw_devices [get_hw_devices xc7z020_1]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7z020_1] 0]
+INFO: [Labtools 27-1434] Device xc7z020 (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
+set_property PROBES.FILE {} [get_hw_devices xc7z020_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z020_1]
+set_property PROGRAM.FILE {D:/Vivado/pdm_system/zedboard.runs/impl_1/design_1_wrapper.bit} [get_hw_devices xc7z020_1]
+program_hw_devices [get_hw_devices xc7z020_1]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7z020_1] 0]
+INFO: [Labtools 27-1434] Device xc7z020 (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
+update_ip_catalog -rebuild -scan_changes
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/Vivado/catch_pdm_zedboard_new'.
+report_ip_status -name ip_status
+upgrade_ip -vlnv xilinx.com:user:MYIP_TOP:1.0 [get_ips  design_1_MYIP_TOP_0_0] -log ip_upgrade.log
+Upgrading 'D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/design_1.bd'
+INFO: [IP_Flow 19-3422] Upgraded design_1_MYIP_TOP_0_0 (MYIP_TOP_v1_0 1.0) from revision 35 to revision 36
+WARNING: [BD 41-1731] Type mismatch between connected pins: /processing_system7_0/FCLK_CLK0(clk) and /MYIP_TOP_0_upgraded_ipi/g_hclk_es1(undef)
+WARNING: [BD 41-1731] Type mismatch between connected pins: /rst_ps7_0_100M/peripheral_aresetn(rst) and /MYIP_TOP_0_upgraded_ipi/hreset_n(undef)
+Wrote  : <D:\Vivado\pdm_system\zedboard.srcs\sources_1\bd\design_1\design_1.bd> 
+INFO: [Coretcl 2-1525] Wrote upgrade log to 'D:/Vivado/pdm_system/ip_upgrade.log'.
+export_ip_user_files -of_objects [get_ips design_1_MYIP_TOP_0_0] -no_script -sync -force -quiet
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory D:/Vivado/pdm_system/zedboard.runs/synth_1
+
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+WARNING: [BD 41-1271] The connection to the pin: /axi_ahblite_bridge_0/m_ahb_hsize has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /axi_ahblite_bridge_0/m_ahb_haddr has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /axi_ahblite_bridge_0/m_ahb_htrans has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /axi_ahblite_bridge_0/m_ahb_hburst has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /axi_ahblite_bridge_0/m_ahb_hprot has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /MYIP_TOP_0/hrdata_es1 has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /MYIP_TOP_0/hresp_es1 has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /axi_ahblite_bridge_0/m_ahb_hwdata has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /axi_ahblite_bridge_0/m_ahb_hwrite has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+Wrote  : <D:\Vivado\pdm_system\zedboard.srcs\sources_1\bd\design_1\design_1.bd> 
+VHDL Output written to : D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/synth/design_1.v
+VHDL Output written to : D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/sim/design_1.v
+VHDL Output written to : D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_ps7_0_100M .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_ahblite_bridge_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconstant_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block MYIP_TOP_0 .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'd:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_0/s00_couplers/auto_pc .
+Exporting to file D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/hw_handoff/design_1.hwh
+Generated Block Design Tcl file D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/hw_handoff/design_1_bd.tcl
+Generated Hardware Definition File D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/synth/design_1.hwdef
+WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
+[Mon Jan 18 15:39:08 2021] Launched synth_1...
+Run output will be captured here: D:/Vivado/pdm_system/zedboard.runs/synth_1/runme.log
+[Mon Jan 18 15:39:08 2021] Launched impl_1...
+Run output will be captured here: D:/Vivado/pdm_system/zedboard.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:02 ; elapsed = 00:00:06 . Memory (MB): peak = 4729.234 ; gain = 0.000
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210248470371
+regenerate_bd_layout
+save_bd_design
+Wrote  : <D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+exit
+INFO: [Common 17-206] Exiting Vivado at Mon Jan 18 20:31:51 2021...

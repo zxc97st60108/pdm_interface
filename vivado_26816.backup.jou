@@ -1,0 +1,133 @@
+#-----------------------------------------------------------
+# Vivado v2018.3.1 (64-bit)
+# SW Build 2489853 on Tue Mar 26 04:20:25 MDT 2019
+# IP Build 2486929 on Tue Mar 26 06:44:21 MDT 2019
+# Start of session at: Sat Jan 16 17:37:14 2021
+# Process ID: 26816
+# Current directory: D:/Vivado/pdm_system
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent17180 D:\Vivado\pdm_system\zedboard.xpr
+# Log file: D:/Vivado/pdm_system/vivado.log
+# Journal file: D:/Vivado/pdm_system\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/Vivado/pdm_system/zedboard.xpr
+report_ip_status -name ip_status 
+update_compile_order -fileset sources_1
+upgrade_ip [get_ips  {design_1_xlconstant_0_0 design_1_axi_ahblite_bridge_0_0 design_1_axi_interconnect_0_0 design_1_rst_ps7_0_100M_0}] -log ip_upgrade.log
+export_ip_user_files -of_objects [get_ips {design_1_xlconstant_0_0 design_1_axi_ahblite_bridge_0_0 design_1_axi_interconnect_0_0 design_1_rst_ps7_0_100M_0}] -no_script -sync -force -quiet
+update_ip_catalog -rebuild
+set_property  ip_repo_paths  {} [current_project]
+update_ip_catalog
+set_property  ip_repo_paths  D:/Vivado/catch_pdm_zedboard_new [current_project]
+update_ip_catalog
+report_ip_status -name ip_status 
+open_bd_design {D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/design_1.bd}
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:user:MYIP_TOP:1.0 MYIP_TOP_0
+endgroup
+set_property location {3.5 1144 171} [get_bd_cells MYIP_TOP_0]
+set_property location {4.5 1166 310} [get_bd_cells MYIP_TOP_0]
+connect_bd_intf_net [get_bd_intf_pins axi_ahblite_bridge_0/M_AHB] [get_bd_intf_pins MYIP_TOP_0/ahb_system]
+connect_bd_net [get_bd_pins axi_ahblite_bridge_0/m_ahb_haddr] [get_bd_pins MYIP_TOP_0/haddr]
+connect_bd_net [get_bd_pins axi_ahblite_bridge_0/m_ahb_hburst] [get_bd_pins MYIP_TOP_0/hburst]
+connect_bd_net [get_bd_pins axi_ahblite_bridge_0/m_ahb_hprot] [get_bd_pins MYIP_TOP_0/hprot]
+connect_bd_net [get_bd_pins axi_ahblite_bridge_0/m_ahb_hrdata] [get_bd_pins MYIP_TOP_0/hrdata_es1]
+connect_bd_net [get_bd_pins axi_ahblite_bridge_0/m_ahb_hready] [get_bd_pins MYIP_TOP_0/hready]
+connect_bd_net [get_bd_pins axi_ahblite_bridge_0/m_ahb_hresp] [get_bd_pins MYIP_TOP_0/hresp_es1]
+connect_bd_net [get_bd_pins axi_ahblite_bridge_0/m_ahb_hsize] [get_bd_pins MYIP_TOP_0/hsize]
+connect_bd_net [get_bd_pins axi_ahblite_bridge_0/m_ahb_htrans] [get_bd_pins MYIP_TOP_0/htrans]
+connect_bd_net [get_bd_pins axi_ahblite_bridge_0/m_ahb_hwdata] [get_bd_pins MYIP_TOP_0/hwdata]
+connect_bd_net [get_bd_pins axi_ahblite_bridge_0/m_ahb_hwrite] [get_bd_pins MYIP_TOP_0/hwrite]
+delete_bd_objs [get_bd_nets Net]
+connect_bd_net [get_bd_pins axi_ahblite_bridge_0/m_ahb_hready] [get_bd_pins MYIP_TOP_0/hreadyout_es1]
+connect_bd_net [get_bd_pins MYIP_TOP_0/hready] [get_bd_pins MYIP_TOP_0/hsel_es1]
+connect_bd_net [get_bd_pins MYIP_TOP_0/hsel_es1] [get_bd_pins xlconstant_0/dout]
+connect_bd_net [get_bd_pins MYIP_TOP_0/g_hclk_es1] [get_bd_pins processing_system7_0/FCLK_CLK0]
+connect_bd_net [get_bd_pins MYIP_TOP_0/hreset_n] [get_bd_pins rst_ps7_0_100M/peripheral_aresetn]
+startgroup
+make_bd_pins_external  [get_bd_pins MYIP_TOP_0/pdm_in]
+endgroup
+startgroup
+make_bd_pins_external  [get_bd_pins MYIP_TOP_0/pdm_signal]
+endgroup
+save_bd_design
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+wait_on_run impl_1
+reset_run synth_1
+assign_bd_address [get_bd_addr_segs {MYIP_TOP_0/ahb_system/ahb_block }]
+save_bd_design
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+wait_on_run impl_1
+open_hw
+report_ip_status -name ip_status 
+add_files -fileset constrs_1 -norecurse D:/Vivado/catch_pdm_zedboard/catch_pdm_zedboard.srcs/constrs_1/imports/project_1/system.xdc
+import_files -fileset constrs_1 D:/Vivado/catch_pdm_zedboard/catch_pdm_zedboard.srcs/constrs_1/imports/project_1/system.xdc
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+wait_on_run impl_1
+regenerate_bd_layout
+save_bd_design
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+wait_on_run impl_1
+exclude_bd_addr_seg [get_bd_addr_segs processing_system7_0/Data/SEG_MYIP_TOP_0_ahb_block]
+delete_bd_objs [get_bd_addr_segs -excluded processing_system7_0/Data/SEG_MYIP_TOP_0_ahb_block]
+regenerate_bd_layout
+set_property  ip_repo_paths  {d:/Vivado/catch_pdm_zedboard_new D:/Vivado/zynq_pmod} [current_project]
+update_ip_catalog
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:axi_gpio:2.0 axi_gpio_0
+apply_board_connection -board_interface "btns_5bits" -ip_intf "axi_gpio_0/GPIO2" -diagram "design_1" 
+endgroup
+delete_bd_objs [get_bd_intf_nets axi_gpio_0_GPIO2] [get_bd_cells axi_gpio_0]
+startgroup
+create_bd_cell -type ip -vlnv digilentinc.com:IP:PmodGPIO:1.0 PmodGPIO_0
+endgroup
+delete_bd_objs [get_bd_cells PmodGPIO_0]
+regenerate_bd_layout
+regenerate_bd_layout
+regenerate_bd_layout
+startgroup
+create_bd_cell -type ip -vlnv digilentinc.com:ip:pmod_bridge:1.0 pmod_bridge_0
+endgroup
+set_property location {1 25 17} [get_bd_cells pmod_bridge_0]
+delete_bd_objs [get_bd_cells pmod_bridge_0]
+startgroup
+create_bd_cell -type ip -vlnv digilentinc.com:IP:PmodGPIO:1.0 PmodGPIO_0
+endgroup
+delete_bd_objs [get_bd_cells PmodGPIO_0]
+regenerate_bd_layout
+regenerate_bd_layout
+save_bd_design
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+wait_on_run impl_1
+assign_bd_address [get_bd_addr_segs {MYIP_TOP_0/ahb_system/ahb_block }]
+save_bd_design
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+wait_on_run impl_1
+set_property  ip_repo_paths  d:/Vivado/catch_pdm_zedboard_new [current_project]
+update_ip_catalog
+delete_bd_objs [get_bd_addr_segs processing_system7_0/Data/SEG_MYIP_TOP_0_ahb_block]
+assign_bd_address
+save_bd_design
+delete_bd_objs [get_bd_addr_segs processing_system7_0/Data/SEG_MYIP_TOP_0_ahb_block]
+assign_bd_address [get_bd_addr_segs {MYIP_TOP_0/ahb_system/ahb_block }]
+save_bd_design
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+wait_on_run impl_1
+report_ip_status -name ip_status 
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+wait_on_run impl_1
+open_run impl_1
+report_utilization -name utilization_1

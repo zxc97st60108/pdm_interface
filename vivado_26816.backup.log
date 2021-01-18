@@ -1,0 +1,499 @@
+#-----------------------------------------------------------
+# Vivado v2018.3.1 (64-bit)
+# SW Build 2489853 on Tue Mar 26 04:20:25 MDT 2019
+# IP Build 2486929 on Tue Mar 26 06:44:21 MDT 2019
+# Start of session at: Sat Jan 16 17:37:14 2021
+# Process ID: 26816
+# Current directory: D:/Vivado/pdm_system
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent17180 D:\Vivado\pdm_system\zedboard.xpr
+# Log file: D:/Vivado/pdm_system/vivado.log
+# Journal file: D:/Vivado/pdm_system\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/Vivado/pdm_system/zedboard.xpr
+INFO: [Project 1-313] Project file moved from 'D:/AISoc/zedboard_system' since last save.
+Scanning sources...
+Finished scanning sources
+WARNING: [filemgmt 56-2] IP Repository Path: Could not find the directory 'D:/Vivado/DNN_TEST', nor could it be found using path 'D:/AISoc/DNN_TEST'.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+WARNING: [IP_Flow 19-2248] Failed to load user IP repository 'd:/Vivado/DNN_TEST'; Can't find the specified path.
+If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.3/data/ip'.
+WARNING: [BD 41-1661] One or more IPs have been locked in the design 'design_1.bd'. Please run report_ip_status for more details and recommendations on how to fix this issue.
+List of locked IPs:
+design_1_axi_interconnect_0_0
+design_1_rst_ps7_0_100M_0
+design_1_auto_pc_0
+design_1_axi_ahblite_bridge_0_0
+design_1_xlconstant_0_0
+
+INFO: [Project 1-230] Project 'zedboard.xpr' upgraded for this version of Vivado.
+open_project: Time (s): cpu = 00:00:11 ; elapsed = 00:00:06 . Memory (MB): peak = 822.457 ; gain = 194.508
+report_ip_status -name ip_status 
+update_compile_order -fileset sources_1
+upgrade_ip [get_ips  {design_1_xlconstant_0_0 design_1_axi_ahblite_bridge_0_0 design_1_axi_interconnect_0_0 design_1_rst_ps7_0_100M_0}] -log ip_upgrade.log
+Adding cell -- xilinx.com:ip:processing_system7:5.5 - processing_system7_0
+Adding cell -- xilinx.com:ip:proc_sys_reset:5.0 - rst_ps7_0_100M
+Adding cell -- xilinx.com:ip:axi_ahblite_bridge:3.0 - axi_ahblite_bridge_0
+Adding cell -- xilinx.com:ip:xlconstant:1.1 - xlconstant_0
+Adding cell -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
+Successfully read diagram <design_1> from BD file <D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/design_1.bd>
+Upgrading 'D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/design_1.bd'
+INFO: [IP_Flow 19-3422] Upgraded design_1_axi_ahblite_bridge_0_0 (AXI AHBLite Bridge 3.0) from revision 12 to revision 15
+INFO: [IP_Flow 19-3422] Upgraded design_1_axi_interconnect_0_0 (AXI Interconnect 2.1) from revision 15 to revision 19
+INFO: [Ipptcl 7-1463] No Compatible Board Interface found. Board Tab not created in customize GUI
+INFO: [IP_Flow 19-3422] Upgraded design_1_rst_ps7_0_100M_0 (Processor System Reset 5.0) from revision 12 to revision 13
+INFO: [IP_Flow 19-3422] Upgraded design_1_xlconstant_0_0 (Constant 1.1) from revision 3 to revision 5
+Wrote  : <D:\Vivado\pdm_system\zedboard.srcs\sources_1\bd\design_1\design_1.bd> 
+INFO: [BD 41-2124] The block design file <D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/design_1.bd> has changed from an XML format to a JSON format. All flows are expected to work as in prior versions of Vivado. Please contact your Xilinx Support representative, in case of any issues.
+Wrote  : <D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+INFO: [Coretcl 2-1525] Wrote upgrade log to 'D:/Vivado/pdm_system/ip_upgrade.log'.
+upgrade_ip: Time (s): cpu = 00:00:11 ; elapsed = 00:00:08 . Memory (MB): peak = 920.891 ; gain = 82.820
+export_ip_user_files -of_objects [get_ips {design_1_xlconstant_0_0 design_1_axi_ahblite_bridge_0_0 design_1_axi_interconnect_0_0 design_1_rst_ps7_0_100M_0}] -no_script -sync -force -quiet
+update_ip_catalog -rebuild
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+WARNING: [IP_Flow 19-2248] Failed to load user IP repository 'd:/Vivado/DNN_TEST'; Can't find the specified path.
+If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
+set_property  ip_repo_paths  {} [current_project]
+update_ip_catalog
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+set_property  ip_repo_paths  D:/Vivado/catch_pdm_zedboard_new [current_project]
+update_ip_catalog
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/Vivado/catch_pdm_zedboard_new'.
+report_ip_status -name ip_status 
+open_bd_design {D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/design_1.bd}
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:user:MYIP_TOP:1.0 MYIP_TOP_0
+endgroup
+set_property location {3.5 1144 171} [get_bd_cells MYIP_TOP_0]
+set_property location {4.5 1166 310} [get_bd_cells MYIP_TOP_0]
+connect_bd_intf_net [get_bd_intf_pins axi_ahblite_bridge_0/M_AHB] [get_bd_intf_pins MYIP_TOP_0/ahb_system]
+connect_bd_net [get_bd_pins axi_ahblite_bridge_0/m_ahb_haddr] [get_bd_pins MYIP_TOP_0/haddr]
+WARNING: [BD 41-1306] The connection to interface pin /axi_ahblite_bridge_0/m_ahb_haddr is being overridden by the user. This pin will not be connected as a part of interface connection M_AHB
+WARNING: [BD 41-1306] The connection to interface pin /MYIP_TOP_0/haddr is being overridden by the user. This pin will not be connected as a part of interface connection ahb_system
+connect_bd_net [get_bd_pins axi_ahblite_bridge_0/m_ahb_hburst] [get_bd_pins MYIP_TOP_0/hburst]
+WARNING: [BD 41-1306] The connection to interface pin /axi_ahblite_bridge_0/m_ahb_hburst is being overridden by the user. This pin will not be connected as a part of interface connection M_AHB
+WARNING: [BD 41-1306] The connection to interface pin /MYIP_TOP_0/hburst is being overridden by the user. This pin will not be connected as a part of interface connection ahb_system
+connect_bd_net [get_bd_pins axi_ahblite_bridge_0/m_ahb_hprot] [get_bd_pins MYIP_TOP_0/hprot]
+WARNING: [BD 41-1306] The connection to interface pin /axi_ahblite_bridge_0/m_ahb_hprot is being overridden by the user. This pin will not be connected as a part of interface connection M_AHB
+WARNING: [BD 41-1306] The connection to interface pin /MYIP_TOP_0/hprot is being overridden by the user. This pin will not be connected as a part of interface connection ahb_system
+connect_bd_net [get_bd_pins axi_ahblite_bridge_0/m_ahb_hrdata] [get_bd_pins MYIP_TOP_0/hrdata_es1]
+WARNING: [BD 41-1306] The connection to interface pin /axi_ahblite_bridge_0/m_ahb_hrdata is being overridden by the user. This pin will not be connected as a part of interface connection M_AHB
+WARNING: [BD 41-1306] The connection to interface pin /MYIP_TOP_0/hrdata_es1 is being overridden by the user. This pin will not be connected as a part of interface connection ahb_system
+connect_bd_net [get_bd_pins axi_ahblite_bridge_0/m_ahb_hready] [get_bd_pins MYIP_TOP_0/hready]
+WARNING: [BD 41-1306] The connection to interface pin /axi_ahblite_bridge_0/m_ahb_hready is being overridden by the user. This pin will not be connected as a part of interface connection M_AHB
+WARNING: [BD 41-1306] The connection to interface pin /MYIP_TOP_0/hready is being overridden by the user. This pin will not be connected as a part of interface connection ahb_system
+connect_bd_net [get_bd_pins axi_ahblite_bridge_0/m_ahb_hresp] [get_bd_pins MYIP_TOP_0/hresp_es1]
+WARNING: [BD 41-1306] The connection to interface pin /axi_ahblite_bridge_0/m_ahb_hresp is being overridden by the user. This pin will not be connected as a part of interface connection M_AHB
+WARNING: [BD 41-1306] The connection to interface pin /MYIP_TOP_0/hresp_es1 is being overridden by the user. This pin will not be connected as a part of interface connection ahb_system
+connect_bd_net [get_bd_pins axi_ahblite_bridge_0/m_ahb_hsize] [get_bd_pins MYIP_TOP_0/hsize]
+WARNING: [BD 41-1306] The connection to interface pin /axi_ahblite_bridge_0/m_ahb_hsize is being overridden by the user. This pin will not be connected as a part of interface connection M_AHB
+WARNING: [BD 41-1306] The connection to interface pin /MYIP_TOP_0/hsize is being overridden by the user. This pin will not be connected as a part of interface connection ahb_system
+connect_bd_net [get_bd_pins axi_ahblite_bridge_0/m_ahb_htrans] [get_bd_pins MYIP_TOP_0/htrans]
+WARNING: [BD 41-1306] The connection to interface pin /axi_ahblite_bridge_0/m_ahb_htrans is being overridden by the user. This pin will not be connected as a part of interface connection M_AHB
+WARNING: [BD 41-1306] The connection to interface pin /MYIP_TOP_0/htrans is being overridden by the user. This pin will not be connected as a part of interface connection ahb_system
+connect_bd_net [get_bd_pins axi_ahblite_bridge_0/m_ahb_hwdata] [get_bd_pins MYIP_TOP_0/hwdata]
+WARNING: [BD 41-1306] The connection to interface pin /axi_ahblite_bridge_0/m_ahb_hwdata is being overridden by the user. This pin will not be connected as a part of interface connection M_AHB
+WARNING: [BD 41-1306] The connection to interface pin /MYIP_TOP_0/hwdata is being overridden by the user. This pin will not be connected as a part of interface connection ahb_system
+connect_bd_net [get_bd_pins axi_ahblite_bridge_0/m_ahb_hwrite] [get_bd_pins MYIP_TOP_0/hwrite]
+WARNING: [BD 41-1306] The connection to interface pin /axi_ahblite_bridge_0/m_ahb_hwrite is being overridden by the user. This pin will not be connected as a part of interface connection M_AHB
+WARNING: [BD 41-1306] The connection to interface pin /MYIP_TOP_0/hwrite is being overridden by the user. This pin will not be connected as a part of interface connection ahb_system
+delete_bd_objs [get_bd_nets Net]
+connect_bd_net [get_bd_pins axi_ahblite_bridge_0/m_ahb_hready] [get_bd_pins MYIP_TOP_0/hreadyout_es1]
+WARNING: [BD 41-1306] The connection to interface pin /axi_ahblite_bridge_0/m_ahb_hready is being overridden by the user. This pin will not be connected as a part of interface connection M_AHB
+WARNING: [BD 41-1306] The connection to interface pin /MYIP_TOP_0/hreadyout_es1 is being overridden by the user. This pin will not be connected as a part of interface connection ahb_system
+connect_bd_net [get_bd_pins MYIP_TOP_0/hready] [get_bd_pins MYIP_TOP_0/hsel_es1]
+WARNING: [BD 41-1306] The connection to interface pin /MYIP_TOP_0/hready is being overridden by the user. This pin will not be connected as a part of interface connection ahb_system
+WARNING: [BD 41-1306] The connection to interface pin /MYIP_TOP_0/hsel_es1 is being overridden by the user. This pin will not be connected as a part of interface connection ahb_system
+connect_bd_net [get_bd_pins MYIP_TOP_0/hsel_es1] [get_bd_pins xlconstant_0/dout]
+connect_bd_net [get_bd_pins MYIP_TOP_0/g_hclk_es1] [get_bd_pins processing_system7_0/FCLK_CLK0]
+WARNING: [BD 41-1731] Type mismatch between connected pins: /processing_system7_0/FCLK_CLK0(clk) and /MYIP_TOP_0/g_hclk_es1(undef)
+connect_bd_net [get_bd_pins MYIP_TOP_0/hreset_n] [get_bd_pins rst_ps7_0_100M/peripheral_aresetn]
+WARNING: [BD 41-1731] Type mismatch between connected pins: /rst_ps7_0_100M/peripheral_aresetn(rst) and /MYIP_TOP_0/hreset_n(undef)
+startgroup
+make_bd_pins_external  [get_bd_pins MYIP_TOP_0/pdm_in]
+endgroup
+startgroup
+make_bd_pins_external  [get_bd_pins MYIP_TOP_0/pdm_signal]
+endgroup
+save_bd_design
+Wrote  : <D:\Vivado\pdm_system\zedboard.srcs\sources_1\bd\design_1\design_1.bd> 
+Wrote  : <D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+CRITICAL WARNING: [BD 41-1356] Address block </MYIP_TOP_0/ahb_system/ahb_block> is not mapped into </processing_system7_0/Data>. Please use Address Editor to either map or exclude it.
+CRITICAL WARNING: [BD 41-1356] Address block </MYIP_TOP_0/ahb_system/ahb_block> is not mapped into </processing_system7_0/Data>. Please use Address Editor to either map or exclude it.
+WARNING: [BD 41-1271] The connection to the pin: /axi_ahblite_bridge_0/m_ahb_hsize has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /axi_ahblite_bridge_0/m_ahb_haddr has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /axi_ahblite_bridge_0/m_ahb_htrans has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /axi_ahblite_bridge_0/m_ahb_hburst has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /axi_ahblite_bridge_0/m_ahb_hprot has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /MYIP_TOP_0/hrdata_es1 has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /MYIP_TOP_0/hresp_es1 has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /axi_ahblite_bridge_0/m_ahb_hwdata has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /axi_ahblite_bridge_0/m_ahb_hwrite has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+Wrote  : <D:\Vivado\pdm_system\zedboard.srcs\sources_1\bd\design_1\design_1.bd> 
+VHDL Output written to : D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/synth/design_1.v
+VHDL Output written to : D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/sim/design_1.v
+VHDL Output written to : D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_ps7_0_100M .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_ahblite_bridge_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconstant_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block MYIP_TOP_0 .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'd:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_0/s00_couplers/auto_pc .
+Exporting to file D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/hw_handoff/design_1.hwh
+Generated Block Design Tcl file D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/hw_handoff/design_1_bd.tcl
+Generated Hardware Definition File D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/synth/design_1.hwdef
+[Sat Jan 16 17:49:51 2021] Launched synth_1...
+Run output will be captured here: D:/Vivado/pdm_system/zedboard.runs/synth_1/runme.log
+[Sat Jan 16 17:49:51 2021] Launched impl_1...
+Run output will be captured here: D:/Vivado/pdm_system/zedboard.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:18 ; elapsed = 00:00:22 . Memory (MB): peak = 1266.973 ; gain = 136.090
+reset_run synth_1
+assign_bd_address [get_bd_addr_segs {MYIP_TOP_0/ahb_system/ahb_block }]
+</MYIP_TOP_0/ahb_system/ahb_block> is being mapped into </processing_system7_0/Data> at <0x40000000 [ 8M ]>
+save_bd_design
+Wrote  : <D:\Vivado\pdm_system\zedboard.srcs\sources_1\bd\design_1\design_1.bd> 
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+WARNING: [BD 41-1271] The connection to the pin: /axi_ahblite_bridge_0/m_ahb_hsize has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /axi_ahblite_bridge_0/m_ahb_haddr has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /axi_ahblite_bridge_0/m_ahb_htrans has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /axi_ahblite_bridge_0/m_ahb_hburst has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /axi_ahblite_bridge_0/m_ahb_hprot has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /MYIP_TOP_0/hrdata_es1 has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /MYIP_TOP_0/hresp_es1 has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /axi_ahblite_bridge_0/m_ahb_hwdata has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /axi_ahblite_bridge_0/m_ahb_hwrite has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+Wrote  : <D:\Vivado\pdm_system\zedboard.srcs\sources_1\bd\design_1\design_1.bd> 
+VHDL Output written to : D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/synth/design_1.v
+VHDL Output written to : D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/sim/design_1.v
+VHDL Output written to : D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_ps7_0_100M .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_ahblite_bridge_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconstant_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block MYIP_TOP_0 .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'd:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_0/s00_couplers/auto_pc .
+Exporting to file D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/hw_handoff/design_1.hwh
+Generated Block Design Tcl file D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/hw_handoff/design_1_bd.tcl
+Generated Hardware Definition File D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/synth/design_1.hwdef
+[Sat Jan 16 17:50:18 2021] Launched synth_1...
+Run output will be captured here: D:/Vivado/pdm_system/zedboard.runs/synth_1/runme.log
+[Sat Jan 16 17:50:18 2021] Launched impl_1...
+Run output will be captured here: D:/Vivado/pdm_system/zedboard.runs/impl_1/runme.log
+open_hw
+report_ip_status -name ip_status 
+add_files -fileset constrs_1 -norecurse D:/Vivado/catch_pdm_zedboard/catch_pdm_zedboard.srcs/constrs_1/imports/project_1/system.xdc
+import_files -fileset constrs_1 D:/Vivado/catch_pdm_zedboard/catch_pdm_zedboard.srcs/constrs_1/imports/project_1/system.xdc
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+[Sat Jan 16 17:56:09 2021] Launched synth_1...
+Run output will be captured here: D:/Vivado/pdm_system/zedboard.runs/synth_1/runme.log
+[Sat Jan 16 17:56:09 2021] Launched impl_1...
+Run output will be captured here: D:/Vivado/pdm_system/zedboard.runs/impl_1/runme.log
+regenerate_bd_layout
+save_bd_design
+Wrote  : <D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+[Sat Jan 16 18:20:57 2021] Launched synth_1...
+Run output will be captured here: D:/Vivado/pdm_system/zedboard.runs/synth_1/runme.log
+[Sat Jan 16 18:20:57 2021] Launched impl_1...
+Run output will be captured here: D:/Vivado/pdm_system/zedboard.runs/impl_1/runme.log
+exclude_bd_addr_seg [get_bd_addr_segs processing_system7_0/Data/SEG_MYIP_TOP_0_ahb_block]
+Excluding </MYIP_TOP_0/ahb_system/ahb_block> from </processing_system7_0/Data>
+delete_bd_objs [get_bd_addr_segs -excluded processing_system7_0/Data/SEG_MYIP_TOP_0_ahb_block]
+regenerate_bd_layout
+set_property  ip_repo_paths  {d:/Vivado/catch_pdm_zedboard_new D:/Vivado/zynq_pmod} [current_project]
+update_ip_catalog
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/Vivado/catch_pdm_zedboard_new'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/Vivado/zynq_pmod'.
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:/Vivado/pdm_system/zedboard.srcs/sources_1/imports/hdl/design_1_wrapper.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/synth/design_1.v:]
+ERROR: [Common 17-180] Spawn failed: No error
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:axi_gpio:2.0 axi_gpio_0
+apply_board_connection -board_interface "btns_5bits" -ip_intf "axi_gpio_0/GPIO2" -diagram "design_1" 
+INFO: [board_interface 100-100] set_property CONFIG.USE_BOARD_FLOW true [get_bd_cells -quiet /axi_gpio_0]
+INFO: [board_interface 100-100] set_property CONFIG.GPIO2_BOARD_INTERFACE btns_5bits [get_bd_cells -quiet /axi_gpio_0]
+INFO: [board_interface 100-100] create_bd_intf_port -mode Master -vlnv xilinx.com:interface:gpio_rtl:1.0 btns_5bits
+INFO: [board_interface 100-100] connect_bd_intf_net /btns_5bits /axi_gpio_0/GPIO2
+endgroup
+delete_bd_objs [get_bd_intf_nets axi_gpio_0_GPIO2] [get_bd_cells axi_gpio_0]
+startgroup
+create_bd_cell -type ip -vlnv digilentinc.com:IP:PmodGPIO:1.0 PmodGPIO_0
+endgroup
+delete_bd_objs [get_bd_cells PmodGPIO_0]
+regenerate_bd_layout
+regenerate_bd_layout
+regenerate_bd_layout
+startgroup
+create_bd_cell -type ip -vlnv digilentinc.com:ip:pmod_bridge:1.0 pmod_bridge_0
+endgroup
+set_property location {1 25 17} [get_bd_cells pmod_bridge_0]
+delete_bd_objs [get_bd_cells pmod_bridge_0]
+startgroup
+create_bd_cell -type ip -vlnv digilentinc.com:IP:PmodGPIO:1.0 PmodGPIO_0
+endgroup
+delete_bd_objs [get_bd_cells PmodGPIO_0]
+regenerate_bd_layout
+regenerate_bd_layout
+save_bd_design
+Wrote  : <D:\Vivado\pdm_system\zedboard.srcs\sources_1\bd\design_1\design_1.bd> 
+Wrote  : <D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+CRITICAL WARNING: [BD 41-1356] Address block </MYIP_TOP_0/ahb_system/ahb_block> is not mapped into </processing_system7_0/Data>. Please use Address Editor to either map or exclude it.
+CRITICAL WARNING: [BD 41-1356] Address block </MYIP_TOP_0/ahb_system/ahb_block> is not mapped into </processing_system7_0/Data>. Please use Address Editor to either map or exclude it.
+WARNING: [BD 41-1271] The connection to the pin: /axi_ahblite_bridge_0/m_ahb_hsize has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /axi_ahblite_bridge_0/m_ahb_haddr has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /axi_ahblite_bridge_0/m_ahb_htrans has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /axi_ahblite_bridge_0/m_ahb_hburst has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /axi_ahblite_bridge_0/m_ahb_hprot has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /MYIP_TOP_0/hrdata_es1 has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /MYIP_TOP_0/hresp_es1 has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /axi_ahblite_bridge_0/m_ahb_hwdata has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /axi_ahblite_bridge_0/m_ahb_hwrite has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+Wrote  : <D:\Vivado\pdm_system\zedboard.srcs\sources_1\bd\design_1\design_1.bd> 
+VHDL Output written to : D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/synth/design_1.v
+VHDL Output written to : D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/sim/design_1.v
+VHDL Output written to : D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_ps7_0_100M .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_ahblite_bridge_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconstant_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block MYIP_TOP_0 .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'd:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_0/s00_couplers/auto_pc .
+Exporting to file D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/hw_handoff/design_1.hwh
+Generated Block Design Tcl file D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/hw_handoff/design_1_bd.tcl
+Generated Hardware Definition File D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/synth/design_1.hwdef
+[Sat Jan 16 20:03:36 2021] Launched synth_1...
+Run output will be captured here: D:/Vivado/pdm_system/zedboard.runs/synth_1/runme.log
+[Sat Jan 16 20:03:36 2021] Launched impl_1...
+Run output will be captured here: D:/Vivado/pdm_system/zedboard.runs/impl_1/runme.log
+assign_bd_address [get_bd_addr_segs {MYIP_TOP_0/ahb_system/ahb_block }]
+</MYIP_TOP_0/ahb_system/ahb_block> is being mapped into </processing_system7_0/Data> at <0x40000000 [ 8M ]>
+save_bd_design
+Wrote  : <D:\Vivado\pdm_system\zedboard.srcs\sources_1\bd\design_1\design_1.bd> 
+Wrote  : <D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+WARNING: [BD 41-1271] The connection to the pin: /axi_ahblite_bridge_0/m_ahb_hsize has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /axi_ahblite_bridge_0/m_ahb_haddr has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /axi_ahblite_bridge_0/m_ahb_htrans has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /axi_ahblite_bridge_0/m_ahb_hburst has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /axi_ahblite_bridge_0/m_ahb_hprot has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /MYIP_TOP_0/hrdata_es1 has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /MYIP_TOP_0/hresp_es1 has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /axi_ahblite_bridge_0/m_ahb_hwdata has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /axi_ahblite_bridge_0/m_ahb_hwrite has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+Wrote  : <D:\Vivado\pdm_system\zedboard.srcs\sources_1\bd\design_1\design_1.bd> 
+VHDL Output written to : D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/synth/design_1.v
+VHDL Output written to : D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/sim/design_1.v
+VHDL Output written to : D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_ps7_0_100M .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_ahblite_bridge_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconstant_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block MYIP_TOP_0 .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'd:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_0/s00_couplers/auto_pc .
+Exporting to file D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/hw_handoff/design_1.hwh
+Generated Block Design Tcl file D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/hw_handoff/design_1_bd.tcl
+Generated Hardware Definition File D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/synth/design_1.hwdef
+[Sat Jan 16 20:04:55 2021] Launched synth_1...
+Run output will be captured here: D:/Vivado/pdm_system/zedboard.runs/synth_1/runme.log
+[Sat Jan 16 20:04:55 2021] Launched impl_1...
+Run output will be captured here: D:/Vivado/pdm_system/zedboard.runs/impl_1/runme.log
+set_property  ip_repo_paths  d:/Vivado/catch_pdm_zedboard_new [current_project]
+update_ip_catalog
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/Vivado/catch_pdm_zedboard_new'.
+delete_bd_objs [get_bd_addr_segs processing_system7_0/Data/SEG_MYIP_TOP_0_ahb_block]
+assign_bd_address
+</MYIP_TOP_0/ahb_system/ahb_block> is being mapped into </processing_system7_0/Data> at <0x40000000 [ 8M ]>
+save_bd_design
+Wrote  : <D:\Vivado\pdm_system\zedboard.srcs\sources_1\bd\design_1\design_1.bd> 
+delete_bd_objs [get_bd_addr_segs processing_system7_0/Data/SEG_MYIP_TOP_0_ahb_block]
+assign_bd_address [get_bd_addr_segs {MYIP_TOP_0/ahb_system/ahb_block }]
+</MYIP_TOP_0/ahb_system/ahb_block> is being mapped into </processing_system7_0/Data> at <0x40000000 [ 8M ]>
+save_bd_design
+Wrote  : <D:\Vivado\pdm_system\zedboard.srcs\sources_1\bd\design_1\design_1.bd> 
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+WARNING: [BD 41-1271] The connection to the pin: /axi_ahblite_bridge_0/m_ahb_hsize has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /axi_ahblite_bridge_0/m_ahb_haddr has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /axi_ahblite_bridge_0/m_ahb_htrans has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /axi_ahblite_bridge_0/m_ahb_hburst has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /axi_ahblite_bridge_0/m_ahb_hprot has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /MYIP_TOP_0/hrdata_es1 has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /MYIP_TOP_0/hresp_es1 has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /axi_ahblite_bridge_0/m_ahb_hwdata has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /axi_ahblite_bridge_0/m_ahb_hwrite has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+Wrote  : <D:\Vivado\pdm_system\zedboard.srcs\sources_1\bd\design_1\design_1.bd> 
+VHDL Output written to : D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/synth/design_1.v
+VHDL Output written to : D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/sim/design_1.v
+VHDL Output written to : D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_ps7_0_100M .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_ahblite_bridge_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconstant_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block MYIP_TOP_0 .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'd:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_0/s00_couplers/auto_pc .
+Exporting to file D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/hw_handoff/design_1.hwh
+Generated Block Design Tcl file D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/hw_handoff/design_1_bd.tcl
+Generated Hardware Definition File D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/synth/design_1.hwdef
+[Sat Jan 16 20:18:50 2021] Launched synth_1...
+Run output will be captured here: D:/Vivado/pdm_system/zedboard.runs/synth_1/runme.log
+[Sat Jan 16 20:18:50 2021] Launched impl_1...
+Run output will be captured here: D:/Vivado/pdm_system/zedboard.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+[Sat Jan 16 20:27:24 2021] Launched synth_1...
+Run output will be captured here: D:/Vivado/pdm_system/zedboard.runs/synth_1/runme.log
+[Sat Jan 16 20:27:24 2021] Launched impl_1...
+Run output will be captured here: D:/Vivado/pdm_system/zedboard.runs/impl_1/runme.log
+report_ip_status -name ip_status 
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+[Sat Jan 16 20:36:10 2021] Launched synth_1...
+Run output will be captured here: D:/Vivado/pdm_system/zedboard.runs/synth_1/runme.log
+[Sat Jan 16 20:36:10 2021] Launched impl_1...
+Run output will be captured here: D:/Vivado/pdm_system/zedboard.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+[Sat Jan 16 20:39:08 2021] Launched synth_1...
+Run output will be captured here: D:/Vivado/pdm_system/zedboard.runs/synth_1/runme.log
+[Sat Jan 16 20:39:08 2021] Launched impl_1...
+Run output will be captured here: D:/Vivado/pdm_system/zedboard.runs/impl_1/runme.log
+open_run impl_1
+INFO: [Netlist 29-17] Analyzing 82 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2018.3.1
+INFO: [Device 21-403] Loading part xc7z020clg484-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.434 . Memory (MB): peak = 2460.941 ; gain = 0.000
+Restored from archive | CPU: 0.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.434 . Memory (MB): peak = 2460.941 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 2460.941 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+WARNING: [Designutils 20-3303] unexpected site type 'IOPAD' in HDPYFinalizeIO
+INFO: [Common 17-14] Message 'Designutils 20-3303' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+open_run: Time (s): cpu = 00:00:24 ; elapsed = 00:00:20 . Memory (MB): peak = 2607.227 ; gain = 568.273
+report_utilization -name utilization_1

@@ -1,0 +1,84 @@
+#-----------------------------------------------------------
+# Vivado v2018.3.1 (64-bit)
+# SW Build 2489853 on Tue Mar 26 04:20:25 MDT 2019
+# IP Build 2486929 on Tue Mar 26 06:44:21 MDT 2019
+# Start of session at: Mon Jan 18 02:31:17 2021
+# Process ID: 9576
+# Current directory: D:/Vivado/pdm_system
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent22768 D:\Vivado\pdm_system\zedboard.xpr
+# Log file: D:/Vivado/pdm_system/vivado.log
+# Journal file: D:/Vivado/pdm_system\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/Vivado/pdm_system/zedboard.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/Vivado/catch_pdm_zedboard_new'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.3/data/ip'.
+WARNING: [BD 41-1661] One or more IPs have been locked in the design 'design_1.bd'. Please run report_ip_status for more details and recommendations on how to fix this issue.
+List of locked IPs:
+design_1_MYIP_TOP_0_0
+
+open_project: Time (s): cpu = 00:00:12 ; elapsed = 00:00:06 . Memory (MB): peak = 789.383 ; gain = 153.355
+update_compile_order -fileset sources_1
+open_bd_design {D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/design_1.bd}
+Adding cell -- xilinx.com:ip:processing_system7:5.5 - processing_system7_0
+Adding cell -- xilinx.com:ip:axi_ahblite_bridge:3.0 - axi_ahblite_bridge_0
+Adding cell -- xilinx.com:ip:axi_interconnect:2.1 - axi_interconnect_0
+Adding cell -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
+Adding cell -- xilinx.com:ip:proc_sys_reset:5.0 - rst_ps7_0_100M
+Adding cell -- xilinx.com:ip:xlconstant:1.1 - xlconstant_0
+Adding cell -- xilinx.com:user:MYIP_TOP:1.0 - MYIP_TOP_0
+WARNING: [BD 41-1731] Type mismatch between connected pins: /processing_system7_0/FCLK_CLK0(clk) and /MYIP_TOP_0/g_hclk_es1(undef)
+WARNING: [BD 41-1731] Type mismatch between connected pins: /rst_ps7_0_100M/peripheral_aresetn(rst) and /MYIP_TOP_0/hreset_n(undef)
+Successfully read diagram <design_1> from BD file <D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/design_1.bd>
+open_bd_design: Time (s): cpu = 00:00:10 ; elapsed = 00:00:06 . Memory (MB): peak = 918.031 ; gain = 103.117
+report_ip_status -name ip_status 
+upgrade_ip -vlnv xilinx.com:user:MYIP_TOP:1.0 [get_ips  design_1_MYIP_TOP_0_0] -log ip_upgrade.log
+Upgrading 'D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/design_1.bd'
+WARNING: [IP_Flow 19-4316] Parameter 'TRN_IDLE' is no longer present on the upgraded IP 'design_1_MYIP_TOP_0_0', and cannot be set to '"00"'
+WARNING: [IP_Flow 19-4316] Parameter 'TRN_BUSY' is no longer present on the upgraded IP 'design_1_MYIP_TOP_0_0', and cannot be set to '"01"'
+WARNING: [IP_Flow 19-4316] Parameter 'TRN_NONSEQ' is no longer present on the upgraded IP 'design_1_MYIP_TOP_0_0', and cannot be set to '"10"'
+WARNING: [IP_Flow 19-4316] Parameter 'TRN_SEQ' is no longer present on the upgraded IP 'design_1_MYIP_TOP_0_0', and cannot be set to '"11"'
+WARNING: [IP_Flow 19-4316] Parameter 'RSP_OKAY' is no longer present on the upgraded IP 'design_1_MYIP_TOP_0_0', and cannot be set to '"00"'
+WARNING: [IP_Flow 19-4316] Parameter 'RSP_ERROR' is no longer present on the upgraded IP 'design_1_MYIP_TOP_0_0', and cannot be set to '"01"'
+WARNING: [IP_Flow 19-4316] Parameter 'RSP_RETRY' is no longer present on the upgraded IP 'design_1_MYIP_TOP_0_0', and cannot be set to '"10"'
+WARNING: [IP_Flow 19-4316] Parameter 'RSP_SPLIT' is no longer present on the upgraded IP 'design_1_MYIP_TOP_0_0', and cannot be set to '"11"'
+INFO: [IP_Flow 19-3422] Upgraded design_1_MYIP_TOP_0_0 (MYIP_TOP_v1_0 1.0) from revision 29 to revision 30
+WARNING: [BD 41-1731] Type mismatch between connected pins: /processing_system7_0/FCLK_CLK0(clk) and /MYIP_TOP_0_upgraded_ipi/g_hclk_es1(undef)
+WARNING: [BD 41-1731] Type mismatch between connected pins: /rst_ps7_0_100M/peripheral_aresetn(rst) and /MYIP_TOP_0_upgraded_ipi/hreset_n(undef)
+CRITICAL WARNING: [Coretcl 2-1279] The upgrade of 'design_1_MYIP_TOP_0_0' has identified issues that may require user intervention. Please review the upgrade log 'd:/Vivado/pdm_system/ip_upgrade.log', and verify that the upgraded IP is correctly configured.
+Wrote  : <D:\Vivado\pdm_system\zedboard.srcs\sources_1\bd\design_1\design_1.bd> 
+Wrote  : <D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+INFO: [Coretcl 2-1525] Wrote upgrade log to 'D:/Vivado/pdm_system/ip_upgrade.log'.
+export_ip_user_files -of_objects [get_ips design_1_MYIP_TOP_0_0] -no_script -sync -force -quiet
+generate_target all [get_files  D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/design_1.bd]
+WARNING: [BD 41-1271] The connection to the pin: /axi_ahblite_bridge_0/m_ahb_hsize has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /axi_ahblite_bridge_0/m_ahb_haddr has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /axi_ahblite_bridge_0/m_ahb_htrans has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /axi_ahblite_bridge_0/m_ahb_hburst has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /axi_ahblite_bridge_0/m_ahb_hprot has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /MYIP_TOP_0/hrdata_es1 has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /MYIP_TOP_0/hresp_es1 has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /axi_ahblite_bridge_0/m_ahb_hwdata has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+WARNING: [BD 41-1271] The connection to the pin: /axi_ahblite_bridge_0/m_ahb_hwrite has been overridden by the user. This pin will not be connected as a part of the interface connection: axi_ahblite_bridge_0_M_AHB 
+Wrote  : <D:\Vivado\pdm_system\zedboard.srcs\sources_1\bd\design_1\design_1.bd> 
+VHDL Output written to : D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/synth/design_1.v
+VHDL Output written to : D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/sim/design_1.v
+VHDL Output written to : D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_ps7_0_100M .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_ahblite_bridge_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconstant_0 .
+CRITICAL WARNING: [IP_Flow 19-4965] IP fifo_generator_0 was packaged with board value 'em.avnet.com:zed:part0:1.4'. Current project's board value is 'em.avnet.com:zed:part0:1.3'. Please update the project settings to match the packaged IP.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block MYIP_TOP_0 .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'd:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_0/s00_couplers/auto_pc .
+Exporting to file D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/hw_handoff/design_1.hwh
+Generated Block Design Tcl file D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/hw_handoff/design_1_bd.tcl
+Generated Hardware Definition File D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/synth/design_1.hwdef
+export_ip_user_files -of_objects [get_files D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/design_1.bd] -no_script -sync -force -quiet
+export_simulation -of_objects [get_files D:/Vivado/pdm_system/zedboard.srcs/sources_1/bd/design_1/design_1.bd] -directory D:/Vivado/pdm_system/zedboard.ip_user_files/sim_scripts -ip_user_files_dir D:/Vivado/pdm_system/zedboard.ip_user_files -ipstatic_source_dir D:/Vivado/pdm_system/zedboard.ip_user_files/ipstatic -lib_map_path [list {modelsim=D:/Vivado/pdm_system/zedboard.cache/compile_simlib/modelsim} {questa=D:/Vivado/pdm_system/zedboard.cache/compile_simlib/questa} {riviera=D:/Vivado/pdm_system/zedboard.cache/compile_simlib/riviera} {activehdl=D:/Vivado/pdm_system/zedboard.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+exit
+INFO: [Common 17-206] Exiting Vivado at Mon Jan 18 02:36:02 2021...

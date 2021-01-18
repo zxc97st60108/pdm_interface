@@ -1,0 +1,95 @@
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.3.1 (win64) Build 2489853 Tue Mar 26 04:20:25 MDT 2019
+| Date         : Mon Jan 18 15:42:42 2021
+| Host         : DESKTOP-4I669P4 running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file design_1_wrapper_control_sets_placed.rpt
+| Design       : design_1_wrapper
+| Device       : xc7z020
+---------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Number of unique control sets                            |    25 |
+| Unused register locations in slices containing registers |    93 |
++----------------------------------------------------------+-------+
+
+
+2. Histogram
+------------
+
++--------+--------------+
+| Fanout | Control Sets |
++--------+--------------+
+|      2 |            3 |
+|      3 |            1 |
+|      4 |            3 |
+|      6 |            2 |
+|      8 |            1 |
+|     12 |            2 |
+|    16+ |           13 |
++--------+--------------+
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |             211 |           67 |
+| No           | No                    | Yes                    |              34 |            9 |
+| No           | Yes                   | No                     |              60 |           25 |
+| Yes          | No                    | No                     |               4 |            1 |
+| Yes          | No                    | Yes                    |              54 |           20 |
+| Yes          | Yes                   | No                     |             384 |          121 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+------------------+----------------+
+|                   Clock Signal                  |                                                              Enable Signal                                                             |                                                                   Set/Reset Signal                                                                   | Slice Load Count | Bel Load Count |
++-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+------------------+----------------+
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 |                                                                                                                                        | design_1_i/MYIP_TOP_0/inst/pdm/async_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gsckt_wrst.gic_rst.sckt_rd_rst_ic_reg_0 |                2 |              2 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 | design_1_i/axi_ahblite_bridge_0/U0/AHB_MSTR_IF_MODULE/send_wr_data                                                                     | design_1_i/axi_ahblite_bridge_0/U0/AXI_SLV_IF_MODULE/SR[0]                                                                                           |                1 |              2 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 | design_1_i/axi_ahblite_bridge_0/U0/AXI_SLV_IF_MODULE/write_ready_sm                                                                    | design_1_i/axi_ahblite_bridge_0/U0/AXI_SLV_IF_MODULE/SR[0]                                                                                           |                1 |              2 |
+|  pdm_clk_IBUF_BUFG                              |                                                                                                                                        | design_1_i/MYIP_TOP_0/inst/pdm/async_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gsckt_wrst.gic_rst.sckt_wr_rst_ic_reg_0 |                2 |              3 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 |                                                                                                                                        | design_1_i/rst_ps7_0_100M/U0/EXT_LPF/lpf_int                                                                                                         |                2 |              4 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 | design_1_i/MYIP_TOP_0/inst/pdm/async_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_fb_i_reg_0 |                                                                                                                                                      |                1 |              4 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 | design_1_i/axi_ahblite_bridge_0/U0/AHB_MSTR_IF_MODULE/FSM_sequential_ahb_wr_rd_cs[3]_i_1_n_0                                           | design_1_i/axi_ahblite_bridge_0/U0/AXI_SLV_IF_MODULE/SR[0]                                                                                           |                2 |              4 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 | design_1_i/rst_ps7_0_100M/U0/SEQ/seq_cnt_en                                                                                            | design_1_i/rst_ps7_0_100M/U0/SEQ/SEQ_COUNTER/clear                                                                                                   |                1 |              6 |
+|  pdm_clk_IBUF_BUFG                              | design_1_i/MYIP_TOP_0/inst/pdm/ctrl_r/E[0]                                                                                             | design_1_i/MYIP_TOP_0/inst/pdm/ctrl_w/ACTIVE_LOW_PR_OUT_DFF[0].FDRE_PER_N                                                                            |                2 |              6 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 | design_1_i/axi_ahblite_bridge_0/U0/AHB_MSTR_IF_MODULE/wrap_brst_count[7]_i_1_n_0                                                       | design_1_i/axi_ahblite_bridge_0/U0/AXI_SLV_IF_MODULE/SR[0]                                                                                           |                3 |              8 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 | design_1_i/axi_ahblite_bridge_0/U0/AXI_SLV_IF_MODULE/rd_request                                                                        | design_1_i/axi_ahblite_bridge_0/U0/AXI_SLV_IF_MODULE/SR[0]                                                                                           |                4 |             12 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 | design_1_i/axi_ahblite_bridge_0/U0/AXI_SLV_IF_MODULE/wr_addr_ready_sm                                                                  | design_1_i/axi_ahblite_bridge_0/U0/AXI_SLV_IF_MODULE/SR[0]                                                                                           |                4 |             12 |
+|  pdm_clk_IBUF_BUFG                              | design_1_i/MYIP_TOP_0/inst/pdm/ctrl_w/didx[0]_i_1_n_0                                                                                  | design_1_i/MYIP_TOP_0/inst/pdm/ctrl_w/ACTIVE_LOW_PR_OUT_DFF[0].FDRE_PER_N                                                                            |                4 |             16 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 | design_1_i/axi_ahblite_bridge_0/U0/AXI_SLV_IF_MODULE/ARREADY_i_reg_1[0]                                                                | design_1_i/axi_ahblite_bridge_0/U0/AXI_SLV_IF_MODULE/SR[0]                                                                                           |                8 |             26 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 | design_1_i/axi_ahblite_bridge_0/U0/VALID_READY_SKID/E[0]                                                                               | design_1_i/axi_ahblite_bridge_0/U0/AXI_SLV_IF_MODULE/SR[0]                                                                                           |               12 |             32 |
+| ~pdm_clk_IBUF_BUFG                              | design_1_i/MYIP_TOP_0/inst/pdm/ctrl_r/HWDATA_i_reg[1][0]                                                                               | design_1_i/MYIP_TOP_0/inst/pdm/ctrl_w/ACTIVE_LOW_PR_OUT_DFF[0].FDRE_PER_N                                                                            |               14 |             32 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 |                                                                                                                                        | design_1_i/MYIP_TOP_0/inst/pdm/ctrl_w/ACTIVE_LOW_PR_OUT_DFF[0].FDRE_PER_N                                                                            |                9 |             34 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 | design_1_i/axi_ahblite_bridge_0/U0/AXI_SLV_IF_MODULE/axi_prot[2]_i_1_n_0                                                               | design_1_i/axi_ahblite_bridge_0/U0/AXI_SLV_IF_MODULE/SR[0]                                                                                           |                8 |             38 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 | design_1_i/axi_ahblite_bridge_0/U0/VALID_READY_SKID/sig_data_reg_out_en                                                                | design_1_i/axi_ahblite_bridge_0/U0/AXI_SLV_IF_MODULE/SR[0]                                                                                           |               18 |             45 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 | design_1_i/axi_ahblite_bridge_0/U0/VALID_READY_SKID/sig_s_ready_dup                                                                    | design_1_i/axi_ahblite_bridge_0/U0/AXI_SLV_IF_MODULE/SR[0]                                                                                           |               18 |             45 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 |                                                                                                                                        | design_1_i/axi_ahblite_bridge_0/U0/AXI_SLV_IF_MODULE/SR[0]                                                                                           |               19 |             51 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 | design_1_i/MYIP_TOP_0/inst/pdm/async_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/p_8_out              | design_1_i/MYIP_TOP_0/inst/pdm/async_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gsckt_wrst.gic_rst.sckt_rd_rst_ic_reg_0 |               16 |             68 |
+|  pdm_clk_IBUF_BUFG                              | design_1_i/MYIP_TOP_0/inst/pdm/async_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/p_20_out             | design_1_i/MYIP_TOP_0/inst/pdm/async_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gsckt_wrst.gic_rst.sckt_wr_rst_ic_reg_0 |               25 |             84 |
+|  pdm_clk_IBUF_BUFG                              |                                                                                                                                        |                                                                                                                                                      |               25 |             91 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 |                                                                                                                                        |                                                                                                                                                      |               43 |            123 |
++-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+------------------+----------------+
+
+
